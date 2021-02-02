@@ -126,6 +126,7 @@ body
     position: absolute
     top: 0
     width: 100%
+    z-index: 9
     &-contains
         display: flex
         flex-direction: row
@@ -134,14 +135,10 @@ body
         .logo
             display: flex
             margin-top: gem(50)
-        .links
+        .link
             display: flex
-            flex-direction: row
-            margin-top: gem(40)
-            a
-                display: flex
-                &:last-child
-                    margin-left: gem(70)
+            margin-right: gem(-14)
+            margin-top: gem(50)
 .hero
     &-section
         display: flex
