@@ -280,15 +280,24 @@ body
                 display: flex
                 justify-content: space-between
                 margin-right: gem(100)
-                margin-bottom: gem(70)
+                
+                height: 0
+                opacity: 0
+                pointer-events: none
+                transition: all 1s ease
                 p.desc-1
                     max-width: gem(710)
                 h3
                     margin-top: gem(23)
                     margin-bottom: gem(25)
                     max-width: gem(710)
-            &-element:nth-child(1n+3)
-                display: none
+            &-element
+                &.active
+                    height: gem(400)
+                    opacity: 1
+                    pointer-events: unset
+                    margin-bottom: gem(70)
+                    transition: all 0.3s ease
 
         &-video
             margin-top: gem(40)

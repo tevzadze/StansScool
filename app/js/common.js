@@ -1,10 +1,10 @@
 $(function() {
     
-    // let video = document.querySelector('video')
+    let video = document.querySelector('video')
 
-    // video.addEventListener('click', function () {
-    //     video.setAttribute("controls", "controls")        
-    // })
+    video.addEventListener('click', function () {
+        video.setAttribute("controls", "controls")        
+    })
 
     let questionMarks = document.querySelectorAll('.animationWrapper img')
     let questionsWrapper = document.querySelector('.animationWrapper')
@@ -62,64 +62,73 @@ $(function() {
             questionMarks[i].style.left = `${randomleft}rem`
         }
         if (wrapperPart == 2) {
-            let randomNumber = randomInteger(20, 65)
+            let randomNumber = randomInteger(20, 80)
             let randomleft = (wrapperWidth / 10000) * randomNumber
             questionMarks[i].style.left = `${randomleft}rem`
             questionMarks[i].classList.add('middle')
         }
         if (wrapperPart == 3) {
-            let randomNumber = randomInteger(65, 85)
+            let randomNumber = randomInteger(80, 100)
             let randomleft = (wrapperWidth-15 / 10000) * randomNumber
             questionMarks[i].style.left = `${randomleft}rem`
         }
     }
-});
-
-
     // openOS
-    $(function() {
+    function openOsChars() {
+        let osButtons = document.querySelectorAll('.os span')
+        let osWrappers = document.querySelectorAll('.os-list')
+        for (let i = 0; i < osButtons.length; i++) {
+            osButtons[i].addEventListener('click', function () {
 
-    let buttonWin = document.querySelector('.windowsButton')
-    let contentWin = document.querySelector('.windowsContent')
+                if (!osButtons[i].classList.contains('active')) {
+                    for (let i = 0; i < osButtons.length; i++) {
+                        osWrappers[i].classList.remove('active')
+                        osButtons[i].classList.remove('active')
+                    }
+                    osWrappers[i].classList.add('active')
+                    osButtons[i].classList.add('active')
+                } else {
+                    for (let i = 0; i < osButtons.length; i++) {
+                        osWrappers[i].classList.remove('active')
+                        osButtons[i].classList.remove('active')
+                    }
+                }
+            })
+        }
+    }
+    openOsChars()
 
-    buttonWin.addEventListener('click', function(){
-        buttonWin.classList.toggle('active')
-        buttonMac.classList.remove('active')
-        contentMac.classList.remove('active')
-        contentWin.classList.toggle('active')
-    })
-    
-    let buttonMac = document.querySelector('.macOsButton')
-    let contentMac = document.querySelector('.macOsContent')
+    function faq () {
+        let button = document.querySelector('.openQuestion')
+        let content = document.querySelector('.contentQuestion')
 
-    buttonMac.addEventListener('click', function(){
-        buttonMac.classList.toggle('active')
-        buttonWin.classList.remove('active')
-        contentWin.classList.remove('active')
-        contentMac.classList.toggle('active')
-    })
-});
-    // openQuestion
-    $(function() {
+        button.addEventListener('click', function () {
+            button.classList.toggle('active')
+            content.classList.toggle('active')
+        })
+    }
+    faq()
 
-    let button = document.querySelector('.openQuestion')
-    let content = document.querySelector('.contentQuestion')
+    let counter = 2
+    let showMoreButton = document.querySelector('.showMore')
+    let showMoreButtonText = document.querySelector('.showMore span')
+    let allLesions = document.querySelectorAll('.lesson-section-main-element')
 
-    button.addEventListener('click', function(){
-        button.classList.toggle('active')
-        content.classList.toggle('active')
-    })
-});
-
-// showMore
-
-$(function() {
-
-    let button = document.querySelector('.showMore')
-    let result = document.querySelector('.contentMore')
-
-    button.addEventListener('click', function(){
-        button.classList.toggle('active')
-        result.classList.toggle('active')
+    showMoreButton.addEventListener('click', function () {
+        if (counter < allLesions.length) {
+            counter = counter + 2
+            for (let i = 0; i < counter; i++) {
+                allLesions[i].classList.add('active')
+            }
+            if (counter == allLesions.length) {
+                showMoreButtonText.innerHTML = 'Show Less'
+            }
+        } else {
+            counter = 2
+            for (let i = 2; i < allLesions.length; i++) {
+                allLesions[i].classList.remove('active')
+            }
+            showMoreButtonText.innerHTML = 'Show More'
+        }
     })
 });
