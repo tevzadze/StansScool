@@ -154,9 +154,20 @@ body
             width: gem(202)
             margin-top: gem(65)
         &-video
+            position: relative
             margin: gem(161) auto 0
             width: gem(1000)
             height: auto
+            z-index: 4
+            video
+                width: 100%
+                height: auto
+            .play
+                position: absolute
+                left: gem(450)
+                top: gem(233)
+                z-index: 5
+                cursor: pointer
 
 .animationWrapper
     width: gem(505)
@@ -271,17 +282,46 @@ body
                 margin-right: gem(100)
                 margin-bottom: gem(70)
                 p.desc-1
-                    max-width: gem(680)
+                    max-width: gem(710)
                 h3
                     margin-top: gem(23)
                     margin-bottom: gem(25)
+                    max-width: gem(710)
+            &-element:nth-child(1n+3)
+                display: none
+
         &-video
             margin-top: gem(40)
             width: gem(423)
+        &-video
+            position: relative
+            height: auto
+            z-index: 4
+            video
+                width: 100%
+                height: auto
+            .play
+                position: absolute
+                left: gem(170)
+                top: gem(55)
+                z-index: 5
+                width: gem(100)
+                cursor: pointer
         .button-wrapper
             height: gem(66)
             width: gem(236)
             margin: auto
+            z-index: 4
+            cursor: pointer
+            span
+                z-index: 5
+        .button-wrapper:before
+            opacity: 0.85
+        .contentMore.active
+            .lesson-section-main-element:nth-child(1n+3)
+                display: flex
+
+
 .features
     margin-bottom: gem(210)
     &-section
@@ -358,6 +398,7 @@ body
                     width: gem(396)
                     height: gem(692)
                     border-radius: gem(10)
+                    transition: 0.3s all ease
                     .popular
                         display: flex
                         position: relative
@@ -406,6 +447,10 @@ body
                         .button-wrapper
                             width: gem(172)
                             height: gem(54)
+            &-element:hover
+                .price-section-main-element-content
+                    opacity: 0.85
+                    transition: 0.3s all ease
             &-element:nth-child(2)
                 position: relative
                 top: gem(-50)
@@ -439,15 +484,24 @@ body
                 margin-bottom: gem(40)
                 p.title-h4
                     margin-bottom: gem(15)
-                a
-                    border-bottom: gem(1) var(--color-grey) solid
-                a:hover
-                    border-bottom: none
                 .os
                     display: flex
                     margin-top: gem(12)
-                    a
+                    span
+                        border-bottom: gem(1) var(--color-grey) solid
+                        cursor: pointer
+                    span:hover
+                        border-bottom: none
+                    span
                         margin-right: gem(15)
+                    .windowsButton.active
+                        border-bottom: gem(1) var(--color-grey) solid
+                    .windowsButton.active:hover
+                        border-bottom: gem(1) var(--color-grey) solid
+                    .macOsButton.active
+                        border-bottom: gem(1) var(--color-grey) solid
+                    .macOsButton.active:hover
+                        border-bottom: gem(1) var(--color-grey) solid
                     &-list
                         background: var(--color-white)
                         width: gem(526)
@@ -468,6 +522,14 @@ body
                                 background: var(--color-black)
                         li:last-child
                             margin-bottom: 0
+                .windowsContent
+                    display: none
+                .windowsContent.active
+                    display: flex
+                .macOsContent
+                    display: none
+                .macOsContent.active
+                    display: flex
 .details
     margin-bottom: gem(200)
     &-section
@@ -506,26 +568,42 @@ body
                 flex-direction: column
                 position: relative
                 margin-bottom: gem(60)
-                .title-h7
+                width: gem(770)
+                .openQuestion
+                    padding-left: gem(35)
+                    cursor: pointer
                     &::before
                         content: ""
                         position: absolute
-                        left: gem(-35)
+                        left: 0
                         top: gem(20)
                         width: gem(14)
                         height: gem(1)
                         background: var(--color-black)
+                        transition: 0.3s all ease
                     &::after
                         content: ""
                         position: absolute
-                        left: gem(-35)
+                        left: 0
                         top: gem(20)
                         width: gem(14)
                         height: gem(1)
                         background: var(--color-black)
                         transform: rotate(90deg)
-                .desc-1
+                        transition: 0.3s all ease
+                .openQuestion.active
+                    &::after
+                        transform: rotate(180deg)
+                        transition: 0.3s all ease
+                    &::before
+                        transform: rotate(180deg)
+                        transition: 0.3s all ease
+                .contentQuestion
                     margin-top: gem(10)
+                    position: relative
+                    display: none
+                .contentQuestion.active
+                    display: flex  
             &-element:last-child
                 margin-bottom: 0
 .footer
@@ -556,12 +634,14 @@ body
                     background: linear-gradient(90.34deg, #febd2f .33%,#f95721 25.43%,#fc1370 51.09%,#ba2db2 68.14%,#8342e9 78.65%,#3f89fc 97.57%)
                     width: gem(266)
                     height: gem(54)
+                    z-index: 5
                     input
                         width: gem(264)
                         height: gem(52)
                         background: var(--color-black)
                         border: none
                         color: var(--color-white)
+                        padding: 0
                         padding-left: gem(17)
                     input:focus
                         outline: none
@@ -573,6 +653,9 @@ body
                     background: linear-gradient(90.34deg, #febd2f .33%,#f95721 25.43%,#fc1370 51.09%,#ba2db2 68.14%,#8342e9 78.65%,#3f89fc 97.57%)
                     width: gem(144)
                     height: gem(54)
+                    position: relative
+                    z-index: 4
+                    left: gem(-1)
                     button
                         width: gem(142)
                         height: gem(52)
@@ -580,6 +663,14 @@ body
                         opacity: 0.8
                         border: none
                         padding: 0
+                        transition: 0.3 all ease
+                        cursor: pointer
+                    button:hover
+                        opacity: unset
+                        background: linear-gradient(90.34deg, #febd2f .33%,#f95721 25.43%,#fc1370 51.09%,#ba2db2 68.14%,#8342e9 78.65%,#3f89fc 97.57%)
+                        transition: 0.3 all ease
+                    button:focus
+                        outline: none
         &-policies
             display: flex
             flex-direction: column
@@ -599,3 +690,345 @@ body
                 margin-right: gem(30)
             a:last-child
                 margin-right: 0
+
+@media all and (max-width: 768px)
+    .header
+        &-contains
+            .logo
+                width: gem(76)
+            .link
+                margin-right: 0
+    .hero
+        margin-bottom: gem(140)
+        &-section
+            h1
+                margin-top: gem(245)
+            p
+                margin-top: gem(29)
+            .button-wrapper
+                margin-top: gem(29)
+            &-video
+                width: gem(600)
+                margin-top: gem(114)
+                .play
+                    left: gem(260)
+                    top: gem(100)
+    .advantages
+        margin-bottom: gem(140)
+        &-section
+            &-title
+                margin-bottom: gem(74)
+            &-main
+                .advantages-section-text p
+                    margin-top: gem(30)
+                &-question
+                    .advantages-section-text
+                        max-width: gem(338)
+                        h2
+                            max-width: gem(398)
+                    .advantages-section-pics
+                        width: gem(296)
+                        img
+                            width: gem(100)
+                            height: auto
+                            max-width: unset
+                        img:nth-child(1)
+                            margin-right: gem(50)
+                        img:nth-child(2)
+                            position: absolute
+                            width: gem(160)
+                            margin: auto
+                            left: gem(55)
+                            top: gem(-60)
+                &-spaceman
+                    margin-top: gem(80)
+                    .advantages-section-pics
+                        width: gem(378)
+                        margin-top: gem(24)
+                    .advantages-section-text
+                        margin-top: gem(0)
+                        max-width: gem(400)
+                        align-items: flex-end
+                        p
+                            max-width: gem(322)
+                            margin-top: gem(30)
+                &-monitor
+                    margin-top: gem(100)
+                    .advantages-section-text
+                        max-width: gem(400)
+                        margin-top: 0
+                        p
+                            max-width: gem(338)
+                    .monitor-div
+                        width: gem(248)
+                        height: gem(225)
+                        margin: 0
+                        padding: 0
+                        margin-top: gem(26)
+                        .animationWrapper
+                            width: 100%
+                            height: 100%
+                            margin: 0
+    .lesson
+        margin-bottom: gem(140)
+        &-section
+            &-title
+                margin-bottom: gem(40)
+                h2
+                    margin: 0
+                    text-align: center
+            &-pics
+                margin-top: gem(90)
+                .lesson-section-video
+                    width: gem(240)
+                    margin-top: 0
+                    .play
+                        width: gem(65)
+                        left: gem(95)
+                        top: gem(32)
+            &-main
+                &-element
+                    margin-right: 0
+                    .lesson-section-text
+                        h3
+                            max-width: unset
+                        .desc-1
+                            max-width: gem(430)
+            .button-wrapper
+                width: gem(200)
+                height: gem(40)
+    .features
+        margin-bottom: gem(140)
+        &-section
+            &-title
+                margin-bottom: gem(56)
+                h2
+                    margin: 0
+                    text-align: center
+            &-main
+                &-element
+                    max-width: gem(337)
+                    margin-bottom: gem(60)
+                    &:nth-child(even)
+                        margin-left: 0
+                        align-self: flex-end
+                    h3
+                        margin-bottom: gem(20)
+                &-bottom
+                    margin-top: gem(30)
+                    text-align: center
+    .story
+        margin-bottom: gem(80)
+        &-section
+            &-text
+                display: flex
+                flex-direction: column
+                align-items: flex-end
+                position: relative
+                top: gem(-60)
+                width: 100%
+                h3, p
+                    width: 100%
+                    max-width: gem(420)
+                h3
+                    text-align: left
+                    margin-bottom: gem(20)
+                p:last-child
+                    margin-top: gem(30)
+    .price
+        margin-bottom: gem(105)
+        &-section
+            &-main
+                &-element
+                    width: gem(230)
+                    height: gem(430)
+                    &-content
+                        width: gem(228)
+                        height: gem(428)
+                        .title-h7
+                            margin-top: gem(33)
+                            margin-left: gem(15)
+                            margin-bottom: gem(20)
+                        &-list
+                            margin-left: gem(11)
+                            margin-right: gem(5)
+                            li
+                                margin-bottom: gem(20)
+                        &-bottom
+                            width: gem(195)
+                            left: gem(10)
+                            bottom: gem(32)
+                            .button-wrapper
+                                width: gem(90)
+                                height: gem(26)
+                        .popular
+                            width: gem(134)
+                            height: gem(44)
+                            top: gem(-32)
+                            .popular-main
+                                width: gem(132)
+                                height: gem(42)
+                &-element:nth-child(2) 
+                    height: gem(430)
+                    .price-section-main-element
+                        &-content
+                            height: gem(428)
+                            &-bottom
+                                width: gem(195)
+                                position: relative
+                                height: unset
+                                left: gem(10)
+                                bottom: gem(0)
+    .need
+        margin-bottom: gem(120)
+        &-section
+            &-title
+                margin-bottom: gem(54)
+                h2
+                    text-align: center
+            &-main
+            &-pics
+                width: gem(350)
+            &-text
+                &-element
+                    margin-bottom: gem(30)
+
+                    p.title-h4
+                        margin-bottom: gem(10)
+                    .os
+                        &-list
+                            width: gem(330)
+                            padding: gem(32) gem(32)
+                            li
+                            margin-bottom: gem(20)
+    .details
+        margin-bottom: gem(132)
+        &-section
+            &-title
+                margin-bottom: gem(70)
+    .questions
+        padding-bottom: gem(106)
+        &-section
+            &-title
+                margin-bottom: gem(70)
+            &-main
+                justify-content: flex-start
+            &-list
+                margin-left: gem(20)
+                &-element
+                    width: 100%
+                    margin-bottom: gem(50)
+                    .openQuestion
+                        padding-left: gem(35)
+                        cursor: pointer
+                        &::before
+                            left: 0
+                            top: gem(11)
+                            width: gem(11)
+                        &::after
+                            left: 0
+                            top: gem(11)
+                            width: gem(11)
+                    .contentQuestion
+                        margin-top: gem(20)
+@media all and (max-width: 480px)
+    .hero
+        margin-bottom: gem(37)
+        &-section
+            h1
+                margin-top: gem(206)
+            p
+                margin-top: gem(31)
+            .button-wrapper
+                margin-top: gem(26)
+                width: gem(120)
+                height: gem(40)
+            &-video
+                width: gem(300)
+                margin-top: gem(95)
+                .play
+                    width: gem(40)
+                    height: auto
+                    left: gem(140)
+                    top: gem(60)
+    .advantages
+        margin-bottom: gem(70)
+        &-section
+            &-title
+                margin-bottom: gem(60)
+            &-main
+                .advantages-section-text p
+                    margin-top: gem(30)
+                &-question
+                    flex-direction: column-reverse
+                    margin-top: 0
+                    align-items: center
+                    .advantages-section-text
+                        max-width: gem(338)
+                        margin-top: gem(40)
+                        h2
+                            max-width: gem(398)
+                    .advantages-section-pics
+                        margin: 0
+                        width: gem(200)
+                        img
+                            width: gem(70)
+                        img:nth-child(1)
+                            margin-right: gem(16)
+                        img:nth-child(2)
+                            width: gem(95)
+                            left: gem(40)
+                            top: gem(-20)
+                &-spaceman
+                    margin-top: gem(71)
+                    flex-direction: column
+                    .advantages-section-pics
+                        width: gem(300)
+                        margin-top: gem(24)
+                    .advantages-section-text
+                        margin-top: gem(0)
+                        max-width: gem(400)
+                        align-items: flex-end
+                        p
+                            max-width: gem(322)
+                            margin-top: gem(30)
+                &-monitor
+                    margin-top: gem(56)
+                    align-items: center
+                    flex-direction: column-reverse
+                    .advantages-section-text
+                        max-width: gem(400)
+                        margin-top: 0
+                        p
+                            max-width: gem(338)
+                    .monitor-div
+                        width: gem(248)
+                        height: gem(225)
+                        margin: 0
+                        padding: 0
+                        margin-bottom: gem(50)
+                        .animationWrapper
+                            width: 100%
+                            height: 100%
+                            margin: 0
+    .lesson-section-main-element
+        flex-direction: column
+        align-items: center
+    .lesson-section-pics .lesson-section-video
+        width: gem(295)
+    .price-section-main
+        flex-direction: column
+        align-items: center
+    .details-section-main
+        flex-direction: column
+        align-items: center
+    .need-section-main
+        flex-direction: column
+        align-items: center
+    .footer-main
+        flex-direction: column
+        align-items: center
+    .footer-main-stuff form
+        display: flex
+        flex-direction: column
+        align-items: center

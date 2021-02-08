@@ -74,3 +74,52 @@ $(function() {
         }
     }
 });
+
+
+    // openOS
+    $(function() {
+
+    let buttonWin = document.querySelector('.windowsButton')
+    let contentWin = document.querySelector('.windowsContent')
+
+    buttonWin.addEventListener('click', function(){
+        buttonWin.classList.toggle('active')
+        buttonMac.classList.remove('active')
+        contentMac.classList.remove('active')
+        contentWin.classList.toggle('active')
+    })
+    
+    let buttonMac = document.querySelector('.macOsButton')
+    let contentMac = document.querySelector('.macOsContent')
+
+    buttonMac.addEventListener('click', function(){
+        buttonMac.classList.toggle('active')
+        buttonWin.classList.remove('active')
+        contentWin.classList.remove('active')
+        contentMac.classList.toggle('active')
+    })
+});
+    // openQuestion
+    $(function() {
+
+    let button = document.querySelector('.openQuestion')
+    let content = document.querySelector('.contentQuestion')
+
+    button.addEventListener('click', function(){
+        button.classList.toggle('active')
+        content.classList.toggle('active')
+    })
+});
+
+// showMore
+
+$(function() {
+
+    let button = document.querySelector('.showMore')
+    let result = document.querySelector('.contentMore')
+
+    button.addEventListener('click', function(){
+        button.classList.toggle('active')
+        result.classList.toggle('active')
+    })
+});
