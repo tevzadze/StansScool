@@ -1,10 +1,17 @@
 $(function() {
-    
-    let video = document.querySelector('video')
+    //video play
 
-    video.addEventListener('click', function () {
-        video.setAttribute("controls", "controls")        
-    })
+    let playButton = document.querySelectorAll('.play')
+    let videos = document.querySelectorAll('video')
+
+    for( let i = 0; i < playButton.length; i++) {
+        playButton[i].addEventListener('click', function() {
+            videos[i].setAttribute("controls", "controls") 
+            videos[i].play()
+            playButton[i].classList.add('inactive')
+        })
+    }
+    
 
     let questionMarks = document.querySelectorAll('.animationWrapper img')
     let questionsWrapper = document.querySelector('.animationWrapper')
@@ -96,18 +103,18 @@ $(function() {
             })
         }
     }
+    
     openOsChars()
 
-    function faq () {
-        let button = document.querySelector('.openQuestion')
-        let content = document.querySelector('.contentQuestion')
+    let questions = document.querySelectorAll('.openQuestion')
+    let answers = document.querySelectorAll('.contentQuestion')
 
-        button.addEventListener('click', function () {
-            button.classList.toggle('active')
-            content.classList.toggle('active')
+    for( let i= 0 ; i < questions.length; i++) {
+        questions[i].addEventListener('click', function() {
+            answers[i].classList.toggle('active')
+            questions[i].classList.toggle('active')
         })
     }
-    faq()
 
     let counter = 2
     let showMoreButton = document.querySelector('.showMore')
