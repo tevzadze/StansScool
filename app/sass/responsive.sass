@@ -1,10 +1,14 @@
 @media all and (max-width: 768px)
+    .button-wrapper a
+        font-size: gem(25)
+        line-height: 110%
     .header
         &-contains
             .logo
                 width: gem(76)
             .link
                 margin-right: 0
+                margin-top: gem(58)
     .hero
         margin-bottom: gem(35)
         &-section
@@ -12,6 +16,7 @@
                 margin-top: gem(245)
             p
                 margin-top: gem(29)
+                max-width: gem(445)
             .button-wrapper
                 margin-top: gem(30)
             &-video
@@ -26,6 +31,9 @@
         &-section
             &-title
                 margin-bottom: 0
+                h2
+                    margin: auto
+                    max-width: gem(580)
             &-main
                 .advantages-section-text
                     margin-top: gem(10)
@@ -46,12 +54,20 @@
                             max-width: unset
                         img:nth-child(1)
                             margin-right: gem(50)
+
                         img:nth-child(2)
                             position: absolute
                             width: gem(135)
                             margin: auto
                             left: gem(55)
                             top: gem(0)
+                        &.visible
+                            img
+                                &:nth-child(1)
+                                    transform: scale(1) translateX(gem(98))
+                                &:nth-child(3)
+                                    transform: scale(1) translateX(gem(-98))
+
                 &-spaceman
                     margin-top: gem(80)
                     .advantages-section-pics
@@ -93,9 +109,13 @@
                         margin-top: gem(26)
                         margin-right: gem(20)
                         .animationWrapper
-                            width: 100%
-                            height: 100%
-                            margin: 0
+                            width: gem(211)
+                            height: gem(123)
+                            margin-left: gem(12)
+                            margin-top: gem(18)
+                            img
+                                width: gem(30)
+
     .lesson
         margin-bottom: gem(140)
         &-section
@@ -106,7 +126,7 @@
                     margin: 0
                     text-align: center
             &-pics
-                margin-top: gem(83)
+                margin-top: gem(-13)
                 .lesson-section-video
                     width: gem(240)
                     margin-top: 0
@@ -117,11 +137,15 @@
             &-main
                 &-element
                     margin-right: 0
+                    h3
+                        margin-top: gem(9)
+                        margin-bottom: gem(32)
                     .lesson-section-text
                         .subtitle-1
                         h3
                             max-width: unset
                             margin-bottom: gem(36)
+
                         .desc-1
                             max-width: gem(430)
                         .title-h4
@@ -136,6 +160,7 @@
             .button-wrapper
                 width: gem(200)
                 height: gem(40)
+                margin-top: gem(-7)
             &-text
                 height: auto
     .features
@@ -149,24 +174,39 @@
             &-main
                 &-element
                     max-width: gem(337)
-                    margin-bottom: gem(60)
+                    margin-bottom: gem(65)
                     &:nth-child(even)
                         margin-left: 0
                         align-self: flex-end
+                    &:nth-child(2)
+                        margin-bottom: gem(0)
+                        h3
+                            margin-bottom: gem(20)
+                    &:nth-child(3)
+                        margin-bottom: gem(12)
+                        h3
+                            margin-bottom: gem(20)
+                    &:nth-child(4)
+                        // margin-bottom: gem(12)
+                        h3
+                            margin-bottom: gem(20)
+
                     h3
                         margin-bottom: gem(20)
                 &-bottom
-                    margin-top: gem(30)
+                    margin-top: gem(28)
                     text-align: center
+                    h3
+                        max-width: gem(600)
     .story
-        margin-bottom: gem(80)
+        margin-bottom: gem(95)
         &-section
             &-text
                 display: flex
                 flex-direction: column
                 align-items: flex-end
                 position: relative
-                top: gem(-60)
+                top: gem(-40)
                 width: 100%
                 h3, p
                     width: 100%
@@ -176,28 +216,59 @@
                     margin-bottom: gem(20)
                 p:last-child
                     margin-top: gem(30)
+            &-pics
+                width: 100%
+                height: gem(461)
+                overflow: hidden
+                img
+                    transform: scale(1.17) translateX(gem(-52)) translateY(gem(27))
+                    width: 100%
     .price
         margin-bottom: gem(105)
         &-section
+            &-title
+                h2
+                    margin: auto
+                    max-width: gem(520)
+                    padding: 0
+
             &-main
                 &-element:nth-child(2)
                     width: gem(230)
                     height: gem(430)
-                &-element
-                    width: gem(230)
-                    height: gem(430)
-                    &-content
+                    top: gem(-20)
+                    .price-section-main-element-content
                         width: gem(228)
                         height: gem(428)
                         .title-h7
+                            margin-top: gem(-5)
+                            letter-spacing: 1px
+                    .price-section-main-element-content-list
+                        margin-right: gem(20)
+                        li
+                            margin-bottom: gem(20)
+                            &:nth-child(2), &:nth-child(3)
+                                margin-bottom: gem(20)
+                &-element
+                    width: gem(230)
+                    height: gem(430)
+                    border-radius: gem(4)
+                    &-content
+                        width: gem(228)
+                        height: gem(428)
+                        border-radius: gem(4)
+                        .title-h7
                             margin-top: gem(33)
                             margin-left: gem(15)
-                            margin-bottom: gem(20)
+                            margin-bottom: gem(23)
+                            letter-spacing: 1px
                         &-list
-                            margin-left: gem(11)
+                            margin-left: gem(6)
                             margin-right: gem(5)
                             li
-                                margin-bottom: gem(20)
+                                margin-bottom: gem(17)
+                                span.desc-2
+                                    line-height: gem(17)
                         &-bottom
                             width: gem(195)
                             left: gem(10)
@@ -205,13 +276,23 @@
                             .button-wrapper
                                 width: gem(90)
                                 height: gem(26)
+                                margin-right: gem(0)
+                                a
+                                    font-size: gem(9)
+                                    line-height: 110%
+                            span.title-h4
+                                font-size: gem(20)
+                                line-height: gem(22)
+                                margin-left: 0
                         .popular
                             width: gem(134)
-                            height: gem(44)
-                            top: gem(-32)
+                            height: gem(37)
+                            border-radius: gem(4)
+                            top: gem(-27)
                             .popular-main
                                 width: gem(132)
-                                height: gem(42)
+                                height: gem(35)
+                                border-radius: gem(4)
                 &-element:nth-child(2) 
                     height: gem(430)
                     .price-section-main-element
@@ -224,33 +305,92 @@
                                 left: gem(10)
                                 bottom: gem(0)
     .need
-        margin-bottom: gem(120)
+        margin-bottom: gem(87)
         &-section
             &-title
                 margin-bottom: gem(54)
                 h2
                     text-align: center
+                    &.title-h2
+                        font-size: gem(50)
+                        line-height: 100%
             &-main
             &-pics
                 width: gem(350)
+                margin-left: gem(0)
+                margin-top: gem(75)
             &-text
+                max-width: gem(330)
+                margin-right: gem(0)
                 &-element
                     margin-bottom: gem(30)
 
                     p.title-h4
                         margin-bottom: gem(10)
+                        font-size: gem(25)
+                        line-height: 126%
+                    p.desc-2
+                        font-size: gem(15)
+                        line-height: 120%
+                        a.desc-2
+                            font-size: gem(15)
+                            line-height: 126%
                     .os
+                        span.desc-2
+                            font-size: gem(15)
+                            line-height: 126%
                         &-list
                             width: gem(330)
                             padding: gem(32) gem(32)
                             li
-                            margin-bottom: gem(20)
+                                margin-bottom: gem(20)
+                                &:before
+                                    top: gem(5)
     .details
-        margin-bottom: gem(132)
+        margin-bottom: gem(90)
         &-section
             &-title
                 margin-bottom: gem(70)
-    .questions
+                h2
+                    padding-left: 0
+            &-main
+                &-element
+                    margin-right: gem(40)
+                    position: relative
+                    margin-bottom: gem(85)
+                    .title-h9
+                        text-align: center
+                        &.sub
+                            text-align: left
+                    &:nth-child(1)
+                        order: 1
+                        left: gem(-20)
+
+                        .title-h9:first-child
+                            text-align: left
+                    &:nth-child(2)
+                        order: 3
+                        left: gem(-20)
+                    &:nth-child(3)
+                        order: 2
+                        right: gem(-20)
+                        .title-h9:first-child
+                            text-align: left
+                        .details-section-text
+                            margin-top: gem(5)
+                    &:nth-child(4)
+                        margin-left: gem(0)
+                        margin-right: gem(0)
+                        margin-top: gem(5)
+                        order: 4
+                        right: gem(-20)
+                    &:nth-child(5)
+                        order: 5
+                        margin-top: gem(-56)
+                        margin-bottom: 0
+                        .details-section-text .title-h9
+                            max-width: 100%
+    .questions  
         padding-bottom: gem(106)
         &-section
             &-title
@@ -275,7 +415,25 @@
                             width: gem(11)
                     .contentQuestion
                         margin-top: gem(20)
-    
+    .price-section-main-element:nth-child(2) .price-section-main-element-content-bottom span
+        margin-left: 0
+    .price-section-main-element:nth-child(2) .price-section-main-element-content-bottom
+        margin-top: gem(10)
+    .price-section-main-element:nth-child(2) .price-section-main-element-content-bottom .button-wrapper
+        margin: 0
+        margin-top: gem(-10)
+    .price-section-main-element
+        &:nth-child(3)
+            margin-top: gem(15)
+        &:nth-child(1)
+            margin-top: gem(15)
+            position: relative
+            left: gem(-20)
+    .price-section-main-element:nth-child(3) .price-section-main-element-content .title-h7
+        margin-top: gem(32)
+    .price-section-main-element:nth-child(3) .price-section-main-element-content-list
+        margin-left: gem(12)
+        margin-right: gem(10)
 @media all and (max-width: 480px)
     .hero
         margin-bottom: gem(37)

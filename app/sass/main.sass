@@ -166,6 +166,8 @@ body
 			width: gem(1000)
 			height: gem(551)
 			z-index: 4
+			transform-style: preserve-3d
+			// transition: all 0.1s linear
 			video
 				width: 100%
 				height: 100%
@@ -223,9 +225,10 @@ body
 						z-index: 9
 
 					&.visible
-						img:nth-child(1), img:nth-child(3)
-							transform: scale(1)
-							opacity: 1
+						img
+							&:nth-child(1), &:nth-child(3)
+								transform: scale(1)
+								opacity: 1
 							&:nth-child(3)
 								transform: scale(1) translateX(gem(160))
 							&:nth-child(1)
@@ -307,14 +310,24 @@ body
 				margin: auto
 				width: gem(1114)
 				padding-right: gem(8)
+		&-content
+			display: flex
+			flex-direction: row
+			justify-content: space-between
+			width: 100%
+		&-title-small
+			display: flex
+			flex-direction: column
+			justify-content: flex-start
 		&-main
 			display: flex
 			flex-direction: column
 			&-element
 				display: flex
-				justify-content: space-between
+				flex-direction: column
+				justify-content: flex-start
+				align-items: flex-start
 				margin-right: gem(100)
-				
 				height: 0
 				opacity: 0
 				pointer-events: none
@@ -358,7 +371,7 @@ body
 					h3
 						max-width: gem(710)
 		&-video
-			margin-top: gem(43)
+			margin-top: gem(-73)
 			width: gem(423)
 		&-video
 			position: relative
@@ -415,6 +428,7 @@ body
 					margin-left: gem(675)
 				&:last-child
 					margin-bottom: 0
+				
 				&:nth-child(2)
 					margin-bottom: gem(90)
 					h3
@@ -424,15 +438,13 @@ body
 				&:nth-child(3)
 					margin-bottom: gem(104)
 					h3.title-h4
-						font-size: gem(35)
-						line-height: gem(35)
+						
 						margin-bottom: gem(25)
 					p
 						max-width: gem(500)
 				&:nth-child(4)
 					h3.title-h4
-						font-size: gem(35)
-						line-height: gem(35)
+						
 						margin-bottom: gem(25)
 					p   
 						max-width: gem(470)
@@ -699,50 +711,56 @@ body
 					font-family: var(--main-font)
 		&-main
 			display: flex
-			justify-content: space-between
+			justify-content: center
+			flex-wrap: wrap
+
 			&-element
 				display: flex
 				align-items: center
 				flex-direction: column
 				max-width: gem(320)
-			&:nth-child(2)
-				.details-section-main-element
-					&:nth-child(1)
-						img
-							width: gem(141)
-					&:nth-child(2)
-						img
-							width: gem(200)
-							margin-top: gem(2)
-							margin-left: gem(10)
-						.details-section-text
-							margin-top: gem(10)
-					&:nth-child(3)
-						position: relative
-						right: gem(-9)
-						img
-							width: gem(144)
-							margin-top: gem(10)
-							margin-left: gem(20)
-						.details-section-text
-							margin-top: gem(15)
-			&:last-child
-				justify-content: space-around
-				.details-section-main-element
-					&:nth-child(1)
+				// margin: gem(0) gem(80)
+				margin-right: gem(180)
+				&:nth-child(1)
+					img
+						width: gem(141)
+				&:nth-child(2)
+					img
+						width: gem(200)
+						margin-top: gem(2)
+						margin-left: gem(10)
+					.details-section-text
+						margin-top: gem(10)
+				&:nth-child(3)
+					position: relative
+					// right: gem(-9)
+					margin-right: gem(0)
+					img
+						width: gem(144)
+						margin-top: gem(10)
 						margin-left: gem(20)
-						margin-top: gem(25)
-						img
-							width: gem(141)
-					&:nth-child(2)
-						margin-top: gem(5)
-						margin-left: gem(-50)
-						// max-width: gem(410)
-						img
-							width: gem(181)
-						.details-section-text
-							margin-top: gem(40)
+					.details-section-text
+						margin-top: gem(15)
+				&:nth-child(4)
+					margin-left: gem(20)
+					margin-top: gem(25)
+					margin-right: gem(360)
+					img
+						width: gem(141)
+				&:nth-child(5)
+					margin-right: 0
+					margin-top: gem(5)
+					margin-left: gem(-50)
 
+					img
+						width: gem(181)
+					.details-section-text
+						margin-top: gem(40)
+						width: 100%
+						.title-h9
+							width: gem(390)
+							&.sub
+								width: 100%
 .questions
 	padding-top: gem(140)
 	padding-bottom: gem(128)
@@ -821,6 +839,8 @@ body
 			flex-direction: column
 			.title-h10
 				margin-bottom: gem(22)
+				font-weight: 500
+				letter-spacing: 1px
 			.desc-3
 				margin-top: gem(14)
 				max-width: gem(393)
@@ -855,6 +875,7 @@ body
 					position: relative
 					z-index: 4
 					left: gem(-1)
+					transition: 0.3s all ease
 					button.title-h8
 						width: gem(142)
 						height: gem(52)
@@ -867,8 +888,7 @@ body
 						cursor: pointer
 					button:hover
 						opacity: unset
-						background: linear-gradient(90.34deg, #febd2f .33%,#f95721 25.43%,#fc1370 51.09%,#ba2db2 68.14%,#8342e9 78.65%,#3f89fc 97.57%)
-						transition: 0.3s all ease
+						background: none						// transition: 0.3s all ease
 					button:focus
 						outline: none
 		&-policies
