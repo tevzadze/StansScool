@@ -6,53 +6,69 @@
             .link
                 margin-right: 0
     .hero
-        margin-bottom: gem(140)
+        margin-bottom: gem(35)
         &-section
             h1
                 margin-top: gem(245)
             p
                 margin-top: gem(29)
             .button-wrapper
-                margin-top: gem(29)
+                margin-top: gem(30)
             &-video
                 width: gem(600)
-                margin-top: gem(114)
+                margin-top: 0
                 .play
-                    left: gem(260)
-                    top: gem(100)
+                    width: gem(62)
+                    left: gem(275)
+                    top: gem(245)
     .advantages
         margin-bottom: gem(140)
         &-section
             &-title
-                margin-bottom: gem(74)
+                margin-bottom: 0
             &-main
-                .advantages-section-text p
-                    margin-top: gem(30)
+                .advantages-section-text
+                    margin-top: gem(10)
+                    p
+                        margin-top: gem(30)
                 &-question
                     .advantages-section-text
-                        max-width: gem(338)
+                        max-width: gem(358)
                         h2
                             max-width: gem(398)
                     .advantages-section-pics
-                        width: gem(296)
+                        margin-top: gem(20)
+                        margin-left: gem(87)
+                        width: 100%
                         img
-                            width: gem(100)
+                            width: gem(106)
                             height: auto
                             max-width: unset
                         img:nth-child(1)
                             margin-right: gem(50)
                         img:nth-child(2)
                             position: absolute
-                            width: gem(160)
+                            width: gem(135)
                             margin: auto
                             left: gem(55)
-                            top: gem(-60)
+                            top: gem(0)
                 &-spaceman
                     margin-top: gem(80)
                     .advantages-section-pics
-                        width: gem(378)
+                        width: gem(218)
+                        position: relative
+                        flex-direction: column
+                        left: gem(-25)
                         margin-top: gem(24)
+                        margin-right: gem(93)
+                        img:nth-child(1)
+                            width: gem(218)
+                        img:nth-child(2)
+                            width: gem(218)
+                            top: gem(105)
+                            right: gem(-165)
                     .advantages-section-text
+                        position: relative
                         margin-top: gem(0)
                         max-width: gem(400)
                         align-items: flex-end
@@ -63,8 +79,11 @@
                     margin-top: gem(100)
                     .advantages-section-text
                         max-width: gem(400)
-                        margin-top: 0
+                        margin-top: gem(5)
+                        h3
+                            margin-left: 0
                         p
+                            margin-left: 0
                             max-width: gem(338)
                     .monitor-div
                         width: gem(248)
@@ -72,6 +91,7 @@
                         margin: 0
                         padding: 0
                         margin-top: gem(26)
+                        margin-right: gem(20)
                         .animationWrapper
                             width: 100%
                             height: 100%
@@ -80,12 +100,13 @@
         margin-bottom: gem(140)
         &-section
             &-title
-                margin-bottom: gem(40)
+                margin-bottom: gem(42)
                 h2
+                    width: 100%
                     margin: 0
                     text-align: center
             &-pics
-                margin-top: gem(90)
+                margin-top: gem(83)
                 .lesson-section-video
                     width: gem(240)
                     margin-top: 0
@@ -97,13 +118,26 @@
                 &-element
                     margin-right: 0
                     .lesson-section-text
+                        .subtitle-1
                         h3
                             max-width: unset
+                            margin-bottom: gem(36)
                         .desc-1
                             max-width: gem(430)
+                        .title-h4
+                            margin-top: gem(9)
+                            margin-bottom: gem(31)
+                            font-size: gem(30)
+                &-element.active
+                    height: gem(216)
+                    margin-bottom: gem(55)
+            &-main-element.active:last-child
+                margin-bottom: 0
             .button-wrapper
                 width: gem(200)
                 height: gem(40)
+            &-text
+                height: auto
     .features
         margin-bottom: gem(140)
         &-section
@@ -146,6 +180,9 @@
         margin-bottom: gem(105)
         &-section
             &-main
+                &-element:nth-child(2)
+                    width: gem(230)
+                    height: gem(430)
                 &-element
                     width: gem(230)
                     height: gem(430)
