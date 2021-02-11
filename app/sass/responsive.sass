@@ -392,9 +392,15 @@
                             max-width: 100%
     .questions  
         padding-bottom: gem(106)
+        padding-top: gem(107)
         &-section
             &-title
                 margin-bottom: gem(70)
+                .title-h2.black
+                    font-size: gem(45)
+                    line-height: gem(45)
+                    br
+                        display: none
             &-main
                 justify-content: flex-start
             &-list
@@ -403,8 +409,10 @@
                     width: 100%
                     margin-bottom: gem(50)
                     .openQuestion
-                        padding-left: gem(35)
+                        padding-left: gem(39)
                         cursor: pointer
+                        font-size: gem(20)
+                        line-height: gem(24)
                         &::before
                             left: 0
                             top: gem(11)
@@ -434,6 +442,30 @@
     .price-section-main-element:nth-child(3) .price-section-main-element-content-list
         margin-left: gem(12)
         margin-right: gem(10)
+    .footer
+        margin-top: gem(50)
+        margin-bottom: gem(50)
+        &-logo
+            margin-bottom: gem(50)
+        &-main
+            &-stuff
+                .title-h10
+                    margin-bottom: gem(40)
+            &-policies
+                margin-right: gem(-33)
+                p
+                    font-size: gem(17)
+                    line-height: gem(21)
+                    text-transform: none
+                    margin-top: gem(12)
+                    margin-bottom: gem(19)
+        &-bottom
+            flex-direction: column
+            margin-top: gem(50)
+            &-copyright
+                margin-top: gem(63)
+                span.label-3
+                    color: #B3B3B3
 @media all and (max-width: 480px)
     .header
         &-contains
@@ -800,11 +832,75 @@
                     margin-bottom: gem(18)
                 p.title-h9.sub
                     text-align: left !important
-                
-    .footer-main
-        flex-direction: column
-        align-items: center
-    .footer-main-stuff form
-        display: flex
-        flex-direction: column
-        align-items: center
+    .questions
+        padding-top: gem(23)
+        padding-bottom: gem(54)
+        &-section
+            &-title
+                margin-bottom: gem(49)
+                .title-h2.black
+                    font-size: gem(35)
+                    line-height: gem(35)
+                    br
+                        display: block
+            &-list
+                margin-left: 0
+                &-element
+                    margin-left: 0
+                    margin-bottom: gem(48)
+                    .openQuestion
+                        font-size: gem(14.5)
+                        line-height: gem(21)
+                        padding-left: 0
+                        padding-right: gem(26)
+                        &::before, &::after
+                            left: unset
+                            right: 0
+                            width: gem(20)
+                    .contentQuestion.active
+                        margin-left: 0
+    .footer
+        margin-top: gem(38)
+        &-main
+            flex-direction: column
+            align-items: center
+            &-stuff
+                .title-h10
+                    font-size: gem(15)
+                    line-height: gem(21)
+                    margin-left: gem(-5)
+                    margin-bottom: gem(34)
+                form
+                    display: flex
+                    flex-direction: column
+                    align-items: center
+                    .input
+                        width: 100%
+                        margin-bottom: gem(28)
+                        input
+                            width: calc(100% - 2px)
+                            padding-left: gem(12)
+                    .button
+                        width: gem(246)
+                        button.title-h8
+                            width: gem(244)
+                            font-size: gem(15)
+                            line-height: gem(21)
+                .desc-3
+                    margin-top: gem(51)
+            &-policies
+                margin: 0
+                align-self: flex-start
+                margin-top: gem(33)
+                p
+                    margin-top: 0
+        &-logo
+            width: gem(68)
+            margin-bottom: gem(33)
+        &-bottom
+            margin-top: gem(37)
+            &-copyright
+                margin-top: gem(38)
+                span
+                    font-size: gem(12)
+                    line-height: gem(14.6)
