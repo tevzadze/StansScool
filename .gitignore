@@ -2,7 +2,9 @@
 /dist/
 /.git/
 /app/css/
+/app/video/
 /**/_backstage
 /**/package-lock.json
 /**/Thumbs.db
 /**/*.DS_Store
+/**/*.rar

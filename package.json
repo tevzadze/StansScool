@@ -29,6 +29,8 @@
 		"gsap": "^3.5.1",
 		"npm-check-updates": "^10.2.5",
 		"reset-css": "^5.0.1",
-		"slick-carousel": "^1.8.1"
+		"slick-carousel": "^1.8.1",
+		"three": ">=0.102.0",
+		"three-orbit-controls": "^82.1.0"
 	}
 }

@@ -46,6 +46,7 @@ gulp.task('styles', function() {
 gulp.task('scripts', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery-3.5.1.min.js',
+		'app/libs/popup/jquery.magnific-popup.js',
 		'app/js/common.js', // Always at the end
 		], { allowEmpty: true })
 	.pipe(concat('scripts.min.js'))

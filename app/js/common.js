@@ -17,6 +17,7 @@ $(function() {
     let questionsWrapper = document.querySelector('.animationWrapper')
     let wrapperWidth = questionsWrapper.getBoundingClientRect().width
     let activeDrop = true
+    let resetEnable = true
 
     //random function
     function randomInteger(min, max) {
@@ -24,13 +25,43 @@ $(function() {
         return Math.floor(rand);
     }
 
-    
+    function randomMarksPosition() {
+        for (let i = 0; i < questionMarks.length; i++) {
+
+            let randomNumber = randomInteger(0, 100)
+            let wrapperPart = 0
+            if (randomNumber < 60) {
+                wrapperPart = 2
+            } else if (60 > randomNumber || randomNumber < 80) {
+                wrapperPart = 1
+            } else {
+                wrapperPart = 3
+            }
+            if (wrapperPart == 1) {
+                let randomNumber = randomInteger(0, 20)
+                let randomleft = (wrapperWidth / 10000) * randomNumber
+                questionMarks[i].style.left = `${randomleft}rem`
+            }
+            if (wrapperPart == 2) {
+                let randomNumber = randomInteger(20, 60)
+                let randomleft = (wrapperWidth / 10000) * randomNumber
+                questionMarks[i].style.left = `${randomleft}rem`
+                questionMarks[i].classList.add('middle')
+            }
+            if (wrapperPart == 3) {
+                let randomNumber = randomInteger(60, 80)
+                let randomleft = (wrapperWidth/ 10000) * randomNumber
+                questionMarks[i].style.left = `${randomleft}rem`
+            }
+        }
+    }
+    randomMarksPosition();
+
     function questionMarksRotate() {
         if (activeDrop) {
             activeDrop = false
             for (let i = 0; i < questionMarks.length; i++) {
-                let rotateVariables = randomInteger(50, 100) * 10
-
+                let rotateVariables = randomInteger(30, 60) * 10
                 setTimeout(() => {
                     questionMarks[i].style.transform = `rotate(${rotateVariables}deg)`
                     questionMarks[i].style.bottom = `0rem`;
@@ -47,54 +78,34 @@ $(function() {
                                 setTimeout(() => {
                                     questionMarks[i].style.transition = 'all 0.2s ease-in'
                                     questionMarks[i].style.bottom = `0rem`;
+                                    if (resetEnable == true && i == questionMarks.length - 1) {
+                                        resetEnable = false
+                                        console.log('eneble')
+                                    }
+
                                 }, 200);
                             }, 300);
                         }, 300);
-                    }, 2000)
+                    }, 2000);
+
                 }, randomInteger(0, 1000));
 
             }
-            
+
         }
     }
+
     function questionMarksReset() {
-        for ( let i = 0; i < questionMarks.length; i++ ) {
+        for (let i = 0; i < questionMarks.length; i++) {
             questionMarks[i].style.transition = 'none'
             questionMarks[i].style.transform = 'rotate(0)'
             questionMarks[i].style.bottom = '200%'
-            // console.log(questionMarks[i].getAttribute(style))
             setTimeout(() => {
                 questionMarks[i].style.transition = 'all 2s ease-in'
             }, 1000)
-        }
-    }
-
-    for (let i = 0; i < questionMarks.length; i++) {
-
-        let randomNumber = randomInteger(0, 100)
-        let wrapperPart = 0
-        if (randomNumber < 60) {
-            wrapperPart = 2
-        } else if (60 > randomNumber || randomNumber < 80) {
-            wrapperPart = 1
-        } else {
-            wrapperPart = 3
-        }
-        if (wrapperPart == 1) {
-            let randomNumber = randomInteger(0, 20)
-            let randomleft = (wrapperWidth / 10000) * randomNumber
-            questionMarks[i].style.left = `${randomleft}rem`
-        }
-        if (wrapperPart == 2) {
-            let randomNumber = randomInteger(20, 80)
-            let randomleft = (wrapperWidth / 10000) * randomNumber
-            questionMarks[i].style.left = `${randomleft}rem`
-            questionMarks[i].classList.add('middle')
-        }
-        if (wrapperPart == 3) {
-            let randomNumber = randomInteger(80, 100)
-            let randomleft = (wrapperWidth - 15 / 10000) * randomNumber
-            questionMarks[i].style.left = `${randomleft}rem`
+            if (i == questionMarks.length - 1) {
+                activeDrop = true
+            }
         }
     }
 
@@ -103,6 +114,7 @@ $(function() {
     function openOsChars() {
         let osButtons = document.querySelectorAll('.os span')
         let osWrappers = document.querySelectorAll('.os-list')
+        let closeButton = document.querySelectorAll('.os-list .close')
         for (let i = 0; i < osButtons.length; i++) {
             osButtons[i].addEventListener('click', function() {
 
@@ -120,6 +132,10 @@ $(function() {
                     }
                 }
             })
+            closeButton[i].addEventListener('click', function(){
+                osButtons[i].classList.remove('active')
+                osWrappers[i].classList.remove('active')
+            })
         }
     }
 
@@ -135,31 +151,29 @@ $(function() {
         })
     }
 
-    let counter = 2
-    let showMoreButton = document.querySelector('.showMore')
-    let showMoreButtonText = document.querySelector('.showMore span')
-    let allLesions = document.querySelectorAll('.lesson-section-main-element')
+    // let counter = 2
+    // let showMoreButton = document.querySelector('.showMore')
+    // let showMoreButtonText = document.querySelector('.showMore span')
+    // let allLesions = document.querySelectorAll('.lesson-section-main-element')
 
-    showMoreButton.addEventListener('click', function() {
-        if (counter < allLesions.length) {
-            counter = counter + 2
-            for (let i = 0; i < counter; i++) {
-                allLesions[i].classList.add('active')
-            }
-            if (counter == allLesions.length) {
-                showMoreButtonText.innerHTML = 'Show Less'
-            }
-        } else {
-            counter = 2
-            for (let i = 2; i < allLesions.length; i++) {
-                allLesions[i].classList.remove('active')
-            }
-            showMoreButtonText.innerHTML = 'Show More'
-        }
-    })
+    // showMoreButton.addEventListener('click', function() {
+    //     if(!showMoreButton.classList.contains('less')) {
+    //         for (let i = 0; i < allLesions.length; i++) {
+    //             allLesions[i].classList.add('active')
+    //         }
+    //         showMoreButton.classList.add('less')
+    //         showMoreButtonText.innerHTML = 'Show Less'
+    //     } else {
+    //         for (let i = 2; i < allLesions.length; i++) {
+    //             allLesions[i].classList.remove('active')
+    //         }
+    //         showMoreButton.classList.remove('less')
+    //         showMoreButtonText.innerHTML = 'Show More'
+    //     }
+    // })
 
     //offset from bottom of viewport
-    function inViewport(item,min,max) {
+    function inViewport(item, min, max) {
         let y = item.getBoundingClientRect().top
         let itemHeight = item.getBoundingClientRect().height
         let wh = window.innerHeight
@@ -172,75 +186,122 @@ $(function() {
             return false
         }
     }
+
+    // function infoInViewport(item) {
+    //     let y = item.getBoundingClientRect().top
+    //     let itemHeight = item.getBoundingClientRect().height
+    //     let wh = window.innerHeight
+    //     let bot = (-(y - wh)) - itemHeight
+    //     let top = y
+
+    //     if (bot > 0 & top > 0) {
+    //         return true
+    //     } else {
+    //         return false
+    //     }
+    // }
+    
+    
+
     let heroVideo = document.querySelector('.hero-section-video')
 
-    function videoScale () {
+    function videoScale() {
         let y = heroVideo.getBoundingClientRect().top
         let itemHeight = heroVideo.getBoundingClientRect().height
         let wh = window.innerHeight
         let bot = (-(y - wh)) - itemHeight / 2
         console.log(bot)
-        let scale = (bot/3000)+0.8
-        if (scale > 0.1 && scale < 1) {
+        let scale = (bot / 3000) + 0.8
+        if (scale > 0.1 && scale < 1.2) {
             heroVideo.style.transform = `scale3d(${scale},${scale},1)`
         }
     }
 
-    // let feauters = document.querySelectorAll('.features-section-main-element')
-
-    // function feautersMove (feauter,direction) {
-    //     let y = feauter.getBoundingClientRect().top
-    //     let itemHeight = feauter.getBoundingClientRect().height
-    //     let wh = window.innerHeight
-    //     let bot = (-(y - wh)) - itemHeight / 2
-    //     let translate = (100-(bot/(wh/300)))*direction
-    //     console.log(bot/(wh/100))
-    //     let percent = `${translate}%`
-
-    //     if( bot/(wh/100) < 80 ) {
-    //         feauter.style.transform = `translateX(${percent})`
-    //     }
-        
-    //     // console.log(bot)
-    // }
-
+    let feauters = document.querySelectorAll('.features-section-main-element')
     let monitor = document.querySelector('.monitor-div')
     let marks = document.querySelector('.advantages-section-pics')
 
+    let nameIsStan = document.querySelector('.story-section-text')
+    let myStory = document.querySelector('.roll-block')
+    let cariculum = document.querySelectorAll('.lesson-section-main-element')
+
     window.addEventListener('scroll', function() {
+        // console.log(infoInViewport(nameIsStan))
+        
+        //cariculum animation 
+        for( let i = 0; i < 2; i++) {
+            
+            if(inViewport(cariculum[i], -200, -200)) {
+                cariculum[i].classList.add('visible')
+            } else if (cariculum[i].classList.contains('visible')) {
+                cariculum[i].classList.remove('visible')
+            }
+        }
+        // my name is..
+        if(inViewport(nameIsStan, -220, -220) && !myStory.classList.contains('visible')) {
+            myStory.classList.add('visible')
+            console.log('adddded')
+        } else if (!inViewport(nameIsStan, -220, -220) && myStory.classList.contains('visible')) {
+            myStory.classList.remove('visible')
+        }
+        // infoInViewport(item)
         //Big marks
 
         if (inViewport(marks, 100, 100) && !marks.classList.contains('visible')) {
             marks.classList.add('visible')
-        } else if(!inViewport(marks, 100, 100) && marks.classList.contains('visible')){
+            console.log('marks move')
+        } else if (!inViewport(marks, 100, 100) && marks.classList.contains('visible')) {
             marks.classList.remove('visible')
+            console.log('marks reset')
         }
 
         //monitor drop
-        if (inViewport(monitor,0,0) && activeDrop == true) {
-            questionMarksRotate() 
+        if (inViewport(monitor, -200, -200) && activeDrop == true) {
+            questionMarksRotate()
             console.log('drop it')
-        } else if (!inViewport(monitor, 0, 0) && activeDrop == false){
-            activeDrop = true
+        } else if (!inViewport(monitor, -200, -200) && resetEnable == false) {
+
+            resetEnable = true
             questionMarksReset()
             console.log('reset it')
         }
 
         // video scale
         if (inViewport(heroVideo, 0, 0)) {
-            videoScale ()
+            videoScale()
+            console.log('videoscale')
         }
-
-        // for( let i=0; i<feauters.length; i++) {
+        
+        // feautersMove (feauters[0], 1)
+        // for (let i = 0; i < 4; i++) {
         //     if (inViewport(feauters[i], 0, 0)) {
-                
+        //         feautersMove(feauters[i], -1)
         //         if (i == 0 || i == 2) {
-        //             feautersMove (feauters[i], 1)
+        //             feautersMove(feauters[i], 1)
         //         } else {
-        //             feautersMove (feauters[i], -1)
+        //             feautersMove(feauters[i], -1)
         //         }
         //     }
         // }
 
     })
+    $('.popup-with-move-anim').magnificPopup({
+        type: 'inline',
+
+        fixedContentPos: true,
+        fixedBgPos: true,
+
+        overflowY: 'auto',
+
+        closeBtnInside: true,
+        preloader: false,
+        
+        midClick: true,
+        removalDelay: 300,
+        mainClass: 'my-mfp-slide-bottom'
+    });
+    $('#small-dialog .button-wrapper').on( "click", function() {
+        // preventDefault();
+      $.magnificPopup.close();
+    });
 });
