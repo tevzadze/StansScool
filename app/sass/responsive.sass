@@ -564,18 +564,7 @@
         &-section
             h1
                 margin-top: gem(206)
-                position: relative
-                // z-index: 
-                &:before
-                    display: block
-                    content: ''
-                    width: 100%
-                    z-index: -1
-                    height: 100%
-                    position: absolute
-                    top: 0
-                    background: rgba(17, 17, 17, 0.8)
-                    filter: blur(16px)
+                
             p
                 margin-top: gem(31)
                 position: relative
@@ -598,10 +587,13 @@
                     font-size: gem(12)
             &-video
                 width: gem(300)
-                margin: 0
+                margin: auto
                 margin-top: gem(95)
-                margin-left: gem(15)
+                // margin-left: gem(15)
                 height: unset
+                display: flex
+                align-items: center
+                justify-content: center
                 .play
                     width: gem(40)
                     height: auto
