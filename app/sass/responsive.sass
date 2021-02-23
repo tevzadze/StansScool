@@ -468,10 +468,19 @@
         margin-left: gem(12)
         margin-right: gem(10)
     .footer
-        margin-top: gem(50)
-        margin-bottom: gem(50)
+        margin-top: 0
+        margin-bottom: 0
+        padding: gem(40) 0
         &-logo
-            margin-bottom: gem(50)
+            display: none
+            &-mob
+                display: flex
+                width: gem(95)
+                height: gem(25)
+                margin-top: gem(55)
+                img
+                    width: 100%
+                    height: 100%
         &-main
             &-stuff
                 .title-h10
@@ -488,9 +497,12 @@
             flex-direction: column
             margin-top: gem(50)
             &-copyright
-                margin-top: gem(63)
+                margin-top: 0
+                display: flex
+                align-items: flex-end
                 span.label-3
                     color: #B3B3B3
+                    margin-right: gem(67)
     .advantages-section-main-monitor .monitor-div .youtube-icon
         width: gem(48)
         top: gem(24)
