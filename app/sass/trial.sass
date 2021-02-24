@@ -1,6 +1,9 @@
+header, footer
+	background: #111111
 .dive
-	margin-top: gem(103)
-	margin-bottom: gem(210)
+	background: #111111
+	padding-top: gem(103)
+	padding-bottom: gem(210)
 	&-section
 		display: flex
 		justify-content: space-between
@@ -68,7 +71,8 @@
 		right: 0
 		z-index: -1
 .masterclass
-	margin-bottom: gem(120)
+	background: #111111
+	padding-bottom: gem(120)
 	&-section
 		display: flex
 		justify-content: space-between
@@ -140,6 +144,7 @@
 					width: gem(229)
 					margin-left: gem(6)
 .teaching
+	background: #111111
 	margin-bottom: gem(141)
 	&-section
 		display: flex
@@ -197,6 +202,18 @@
 				font-size: gem(70)
 				line-height: gem(80)
 				margin-bottom: gem(10)
+				position: relative
+				&:before
+					display: block
+					content: ''
+					width: 96%
+					z-index: -1
+					height: 115%
+					position: absolute
+					top: gem(-15)
+					left: gem(-27)
+					background: rgba(17, 17, 17, 0.8)
+					filter: blur(16px)
 			p
 				font-size: gem(20)
 				line-height: gem(32)
@@ -211,5 +228,9 @@
 					.button
 						font-size: gem(20)
 						line-height: gem(22)
+.footer
+	background: #111111
+.rainbow-tablet, .rainbow-mobile
+	display: none
 						
 @import 'trial-responsive.sass'
