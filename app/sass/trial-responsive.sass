@@ -192,7 +192,7 @@
 	// 			margin-right: gem(-15)
 	.dive
 		margin-top: gem(108)
-		margin-bottom: gem(27)
+		margin-bottom: 0
 		&-section
 			flex-direction: column-reverse
 			&-pics
@@ -239,8 +239,16 @@
 	.masterclass
 		margin-bottom: gem(62)
 		&-section
+			flex-direction: column
 			&-pics
-				display: none
+				// content: ''
+				width: 100%
+				height: gem(130)
+				margin-bottom: gem(27)
+				iframe
+					width: 100%
+					height: 100%
+					
 			&-text
 				width: 100%
 				h3

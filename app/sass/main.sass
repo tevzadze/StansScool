@@ -210,27 +210,17 @@ body
 		align-items: flex-start
 		h1
 			margin-top: gem(268)
-			// position: relative
-			// &:before
-			// 	display: block
-			// 	content: ''
-			// 	width: 100%
-			// 	z-index: -1
-			// 	height: 100%
-			// 	position: absolute
-			// 	top: 0
-			// 	background: rgba(17, 17, 17, 0.8)
-			// 	filter: blur(16px)
 			position: relative
 			&:before
 				display: block
 				content: ''
-				width: 85%
+				width: 75%
 				z-index: -1
-				height: 130%
+				height: 100%
 				position: absolute
 				top: gem(-25)
 				left: gem(-37)
+				border-radius: 100%
 				background: rgba(17, 17, 17, 0.8)
 				filter: blur(16px)
 		p
@@ -239,20 +229,6 @@ body
 		.button-wrapper
 			width: gem(200)
 			margin-top: gem(60)
-		// 	a
-		// 		text-transform: uppercase
-		// 		font-family: var(--main-font)
-		// 		font-weight: 700
-		// 		background: #111111
-		// 	&:before
-		// 		background: #111111
-		// 		width: 110%
-		// 		height: 110%
-		// 		transition: all 0.3s ease
-		// 		// display: none
-		// 	&:hover
-		// 		&:before
-		// 			background: rgba(0,0,0,0)
 		&-video
 			position: relative
 			margin: auto
@@ -426,66 +402,41 @@ body
 			display: flex
 			flex-direction: column
 			justify-content: flex-start
+
 		&-main
 			display: flex
 			flex-direction: column
 			&-element
 				display: flex
 				flex-direction: column
-				justify-content: flex-start
+				justify-content: center
 				align-items: flex-start
 				margin-right: gem(100)
-				height: auto
+				height: gem(402)
 				opacity: 0
 				// pointer-events: none
 				transition: all 1s ease
 				transform: translateY(gem(25))
+				position: relative
 				&.visible
 					opacity: 1
 					transform: translateY(0)
 				p.desc-1
-					max-width: gem(660)
+					max-width: gem(560)
 				h3
 					margin-top: gem(19)
 					margin-bottom: gem(22)
-					max-width: gem(670)
+					max-width: gem(500)
 				h3.title-h4
 					line-height: 120%
 				&.active
-					height: gem(295)
-					// opacity: 1
-					pointer-events: unset
-					margin-bottom: gem(70)
-					// transition: all 0.3s ease
-				&:nth-child(3)
-					h3
-						max-width: gem(610)
-				&:nth-child(4)
-					h3
-						max-width: gem(610)
-				&:nth-child(5)
-					h3
-						max-width: gem(610)
-				&:nth-child(6)
-					h3
-						max-width: gem(475)
-				&:nth-child(7)
-					h3
-						max-width: gem(470)
-				&:nth-child(8)
-					h3
-						max-width: gem(610)
-				&:nth-child(9)
-					h3
-						max-width: gem(610)
-				&:nth-child(10)
-					h3
-						max-width: gem(710)
+					
 		&-video
-			margin-top: gem(-73)
-			width: gem(423)
-		&-video
-			position: relative
+
+			top: gem(50)
+			right: 0
+			width: gem(550)
+			position: absolute	
 			height: auto
 			z-index: 4
 			video
@@ -493,8 +444,8 @@ body
 				height: auto
 			.play
 				position: absolute
-				left: gem(170)
-				top: gem(55)
+				left: gem(220)
+				top: gem(95)
 				z-index: 5
 				width: gem(100)
 				cursor: pointer
@@ -517,7 +468,7 @@ body
 	overflow: hidden
 	text-align: left
 	max-width: 95%
-	margin: 40px auto
+	margin: gem(20) auto
 	position: relative
 	pointer-events: unset
 	.button-wrapper
