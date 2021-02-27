@@ -14,101 +14,101 @@ $(function() {
         }
 
 
-        let questionMarks = document.querySelectorAll('.animationWrapper img')
-        let questionsWrapper = document.querySelector('.animationWrapper')
-        let wrapperWidth = questionsWrapper.getBoundingClientRect().width
-        let activeDrop = true
-        let resetEnable = true
+        // let questionMarks = document.querySelectorAll('.animationWrapper img')
+        // let questionsWrapper = document.querySelector('.animationWrapper')
+        // let wrapperWidth = questionsWrapper.getBoundingClientRect().width
+        // let activeDrop = true
+        // let resetEnable = true
 
-        //random function
-        function randomInteger(min, max) {
-            let rand = min + Math.random() * (max + 1 - min);
-            return Math.floor(rand);
-        }
+        // //random function
+        // function randomInteger(min, max) {
+        //     let rand = min + Math.random() * (max + 1 - min);
+        //     return Math.floor(rand);
+        // }
 
-        function randomMarksPosition() {
-            for (let i = 0; i < questionMarks.length; i++) {
+        // function randomMarksPosition() {
+        //     for (let i = 0; i < questionMarks.length; i++) {
 
-                let randomNumber = randomInteger(0, 100)
-                let wrapperPart = 0
-                if (randomNumber < 60) {
-                    wrapperPart = 2
-                } else if (60 > randomNumber || randomNumber < 80) {
-                    wrapperPart = 1
-                } else {
-                    wrapperPart = 3
-                }
-                if (wrapperPart == 1) {
-                    let randomNumber = randomInteger(0, 20)
-                    let randomleft = (wrapperWidth / 10000) * randomNumber
-                    questionMarks[i].style.left = `${randomleft}rem`
-                }
-                if (wrapperPart == 2) {
-                    let randomNumber = randomInteger(20, 60)
-                    let randomleft = (wrapperWidth / 10000) * randomNumber
-                    questionMarks[i].style.left = `${randomleft}rem`
-                    questionMarks[i].classList.add('middle')
-                }
-                if (wrapperPart == 3) {
-                    let randomNumber = randomInteger(60, 80)
-                    let randomleft = (wrapperWidth / 10000) * randomNumber
-                    questionMarks[i].style.left = `${randomleft}rem`
-                }
-            }
-        }
-        randomMarksPosition();
+        //         let randomNumber = randomInteger(0, 100)
+        //         let wrapperPart = 0
+        //         if (randomNumber < 60) {
+        //             wrapperPart = 2
+        //         } else if (60 > randomNumber || randomNumber < 80) {
+        //             wrapperPart = 1
+        //         } else {
+        //             wrapperPart = 3
+        //         }
+        //         if (wrapperPart == 1) {
+        //             let randomNumber = randomInteger(0, 20)
+        //             let randomleft = (wrapperWidth / 10000) * randomNumber
+        //             questionMarks[i].style.left = `${randomleft}rem`
+        //         }
+        //         if (wrapperPart == 2) {
+        //             let randomNumber = randomInteger(20, 60)
+        //             let randomleft = (wrapperWidth / 10000) * randomNumber
+        //             questionMarks[i].style.left = `${randomleft}rem`
+        //             questionMarks[i].classList.add('middle')
+        //         }
+        //         if (wrapperPart == 3) {
+        //             let randomNumber = randomInteger(60, 80)
+        //             let randomleft = (wrapperWidth / 10000) * randomNumber
+        //             questionMarks[i].style.left = `${randomleft}rem`
+        //         }
+        //     }
+        // }
+        // randomMarksPosition();
 
-        function questionMarksRotate() {
-            if (activeDrop) {
-                activeDrop = false
-                for (let i = 0; i < questionMarks.length; i++) {
-                    let rotateVariables = randomInteger(30, 60) * 10
-                    setTimeout(() => {
-                        questionMarks[i].style.transform = `rotate(${rotateVariables}deg)`
-                        questionMarks[i].style.bottom = `0rem`;
-                        setTimeout(() => {
-                            questionMarks[i].style.transition = 'all 0.3s ease'
-                            let randomBottom = randomInteger(3, 5)
-                            questionMarks[i].style.bottom = `${randomBottom*0.1}rem`;
-                            setTimeout(() => {
-                                questionMarks[i].style.transition = 'all 0.3s ease-in'
-                                questionMarks[i].style.bottom = `0rem`;
-                                setTimeout(() => {
-                                    questionMarks[i].style.transition = 'all 0.2s ease'
-                                    questionMarks[i].style.bottom = `0.1rem`;
-                                    setTimeout(() => {
-                                        questionMarks[i].style.transition = 'all 0.2s ease-in'
-                                        questionMarks[i].style.bottom = `0rem`;
-                                        if (resetEnable == true && i == questionMarks.length - 1) {
-                                            resetEnable = false
-                                            console.log('eneble')
-                                        }
+        // function questionMarksRotate() {
+        //     if (activeDrop) {
+        //         activeDrop = false
+        //         for (let i = 0; i < questionMarks.length; i++) {
+        //             let rotateVariables = randomInteger(30, 60) * 10
+        //             setTimeout(() => {
+        //                 questionMarks[i].style.transform = `rotate(${rotateVariables}deg)`
+        //                 questionMarks[i].style.bottom = `0rem`;
+        //                 setTimeout(() => {
+        //                     questionMarks[i].style.transition = 'all 0.3s ease'
+        //                     let randomBottom = randomInteger(3, 5)
+        //                     questionMarks[i].style.bottom = `${randomBottom*0.1}rem`;
+        //                     setTimeout(() => {
+        //                         questionMarks[i].style.transition = 'all 0.3s ease-in'
+        //                         questionMarks[i].style.bottom = `0rem`;
+        //                         setTimeout(() => {
+        //                             questionMarks[i].style.transition = 'all 0.2s ease'
+        //                             questionMarks[i].style.bottom = `0.1rem`;
+        //                             setTimeout(() => {
+        //                                 questionMarks[i].style.transition = 'all 0.2s ease-in'
+        //                                 questionMarks[i].style.bottom = `0rem`;
+        //                                 if (resetEnable == true && i == questionMarks.length - 1) {
+        //                                     resetEnable = false
+        //                                     console.log('eneble')
+        //                                 }
 
-                                    }, 200);
-                                }, 300);
-                            }, 300);
-                        }, 2000);
+        //                             }, 200);
+        //                         }, 300);
+        //                     }, 300);
+        //                 }, 2000);
 
-                    }, randomInteger(0, 1000));
+        //             }, randomInteger(0, 1000));
 
-                }
+        //         }
 
-            }
-        }
+        //     }
+        // }
 
-        function questionMarksReset() {
-            for (let i = 0; i < questionMarks.length; i++) {
-                questionMarks[i].style.transition = 'none'
-                questionMarks[i].style.transform = 'rotate(0)'
-                questionMarks[i].style.bottom = '200%'
-                setTimeout(() => {
-                    questionMarks[i].style.transition = 'all 2s ease-in'
-                }, 1000)
-                if (i == questionMarks.length - 1) {
-                    activeDrop = true
-                }
-            }
-        }
+        // function questionMarksReset() {
+        //     for (let i = 0; i < questionMarks.length; i++) {
+        //         questionMarks[i].style.transition = 'none'
+        //         questionMarks[i].style.transform = 'rotate(0)'
+        //         questionMarks[i].style.bottom = '200%'
+        //         setTimeout(() => {
+        //             questionMarks[i].style.transition = 'all 2s ease-in'
+        //         }, 1000)
+        //         if (i == questionMarks.length - 1) {
+        //             activeDrop = true
+        //         }
+        //     }
+        // }
 
 
         // openOS
@@ -257,15 +257,15 @@ $(function() {
             }
 
             //monitor drop
-            if (inViewport(monitor, -200, -200) && activeDrop == true) {
-                questionMarksRotate()
-                console.log('drop it')
-            } else if (!inViewport(monitor, -200, -200) && resetEnable == false) {
+            // if (inViewport(monitor, -200, -200) && activeDrop == true) {
+            //     questionMarksRotate()
+            //     console.log('drop it')
+            // } else if (!inViewport(monitor, -200, -200) && resetEnable == false) {
 
-                resetEnable = true
-                questionMarksReset()
-                console.log('reset it')
-            }
+            //     resetEnable = true
+            //     questionMarksReset()
+            //     console.log('reset it')
+            // }
 
             // video scale
             if (inViewport(heroVideo, 0, 0)) {
@@ -308,3 +308,12 @@ $(function() {
     }
 
 });
+let preloader = document.querySelector('.preloader')
+window.onload = function() {
+    setTimeout(function() {
+        document.body.classList.add('loaded2');
+        setTimeout(function() {
+            preloader.remove()
+        }, 300)
+    }, 1200);
+}
