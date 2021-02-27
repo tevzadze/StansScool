@@ -27,7 +27,7 @@
 				color: var(--color-white) !important
 				&:before
 					display: none
-	.info
+	.payment
 		margin-top: gem(142)
 		&-section
 			display: flex
@@ -35,76 +35,108 @@
 			&-left
 				display: flex
 				flex-direction: column
-				.checkout
+				.email_address
 					display: flex
 					flex-direction: column
-					position: relative
 					width: gem(630)
-					height: gem(182)
-					align-items: center
+					height: gem(119)
 					background: linear-gradient(90.34deg, #FEBD2F 0.33%, #F95721 25.43%, #FC1370 51.09%, #BA2DB2 68.14%, #8342E9 78.65%, #3F89FC 97.57%)
-					z-index: 2
-					border-radius: gem(4)
+					z-index: 5
+					margin-bottom: gem(58)
 					&:before
 						display: block
-						content: ''
-						width: gem(626)
-						height: gem(178)
 						position: absolute
-						top: gem(2)
-						background: var(--color-black)
+						content: ''
+						width: gem(628)
+						height: gem(117)
 						border-radius: gem(4)
-						z-index: 1
-					p
-						margin: gem(35) 0
-						z-index: 5
-					&-links
-						display: flex
-						justify-content: space-between
-						width: 100%
-						padding: 0 gem(45)
-						z-index: 5
-						a
-							img
-								width: gem(150)
-								height: gem(50)
-				.or
-					display: flex
-					justify-content: center
-					align-items: center
-					height: gem(20)
-					position: relative
-					width: gem(630)
-					z-index: 4
-					margin-top: gem(30)
-					margin-bottom: gem(35)
-					&:before
-						display: block
-						content: ''
-						width: 100%
-						height: gem(2)
-						position: absolute
-						top: gem(9)
-						background: linear-gradient(90.34deg, #FEBD2F 0.33%, #F95721 25.43%, #FC1370 51.09%, #BA2DB2 68.14%, #8342E9 78.65%, #3F89FC 97.57%)
-					div
-						display: flex
+						top: gem(1)
+						left: gem(1)
 						background: var(--color-black)
-						padding: 0 gem(15)
-						z-index: 5
-						p
-							font-size: gem(20)
-							line-height: gem(20)
-							font-weight: 500
+						z-index: -1
+					.email
+						display: flex
+						margin-top: gem(21)
+						margin-bottom: gem(18)
+						&-title
+							display: flex
+							justify-content: center
+							align-items: center
+							margin-left: gem(23)
+							margin-right: gem(48)
+							span
+								font-size: gem(20)
+								line-height: gem(20)
+								font-weight: 400
+						&-name
+							display: flex
+							justify-content: center
+							align-items: center
+							flex-grow: 1
+							span
+								font-size: gem(25)
+								line-height: gem(20)
+								font-weight: 400
+
+					.line
+						display: flex
+						width: gem(600)
+						height: gem(1)
+						margin: auto
+						background: linear-gradient(90.34deg, #FEBD2F 0.33%, #F95721 25.43%, #FC1370 51.09%, #BA2DB2 68.14%, #8342E9 78.65%, #3F89FC 97.57%)
+					.address
+						display: flex
+						margin-top: gem(21)
+						margin-bottom: gem(18)
+						&-title
+							display: flex
+							justify-content: center
+							align-items: center
+							margin-left: gem(23)
+							margin-right: gem(15)
+							span
+								font-size: gem(20)
+								line-height: gem(20)
+								font-weight: 400
+						&-name
+							display: flex
+							justify-content: center
+							align-items: center
+							flex-grow: 1
+							span
+								font-size: gem(25)
+								line-height: gem(20)
+								font-weight: 400
+					.change
+						display: flex
+						justify-content: center
+						align-items: center
+						margin-left: gem(48)
+						margin-right: gem(15)
+						width: gem(52)
+						span
+							font-size: gem(15)
+							line-height: gem(15)
+							font-weight: 400
 				.contact
 					display: flex
 					flex-direction: column
 					width: gem(630)
 					&-title
 						display: flex
-						p
+						flex-direction: column
+						margin-bottom: gem(11)
+						p.subtitle-1
 							font-size: gem(20)
 							line-height: gem(20)
 							font-weight: 500
+						p.desc-1
+							font-size: gem(18)
+							line-height: gem(10)
+							font-weight: 400
+							margin-top: gem(15)
+							color: #C4C4C4
+
 					&-form
 						form
 							display: flex
@@ -134,10 +166,14 @@
 								margin: gem(16) 0
 								input
 									width: gem(628)
+							.input:nth-child(2), .input:nth-child(3)
+								width: gem(269)
+								input
+									width: gem(267)
+							.input:nth-child(2)
+								margin-right: gem(92)
 							.input:nth-child(4), .input:nth-child(5)
 								margin: gem(16) 0
-							.input:nth-child(even)
-								margin-right: gem(20)
 					&-return
 						display: flex
 						width: gem(305)
@@ -145,6 +181,7 @@
 						justify-content: flex-start
 						align-items: center
 						margin-right: gem(20)
+						margin-top: gem(47)
 						img
 							width: gem(22)
 							height: gem(20)
@@ -163,6 +200,7 @@
 						border: none
 						border-radius: gem(2)
 						position: relative
+						margin-top: gem(47)
 						background: linear-gradient(90.34deg, #febd2f .33%,#f95721 25.43%,#fc1370 51.09%,#ba2db2 68.14%,#8342e9 78.65%,#3f89fc 97.57%)
 						&:before
 							display: block
