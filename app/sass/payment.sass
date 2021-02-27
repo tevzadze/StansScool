@@ -20,14 +20,11 @@
 					border-top: gem(2) solid
 					border-color: #646569
 					transform: rotate(45deg)
-			a:nth-child(2)
+			a:nth-child(3)
 				font-size: gem(20)
 				line-height: gem(30)
 				font-weight: 500
 				color: var(--color-white) !important
-				&:before
-					border-color: var(--color-white)
-			a:nth-child(3)
 				&:before
 					display: none
 	.info
@@ -218,10 +215,23 @@
 							margin-bottom: gem(71)
 							height: gem(1)
 							background: linear-gradient(90.34deg, #febd2f .33%,#f95721 25.43%,#fc1370 51.09%,#ba2db2 68.14%,#8342e9 78.65%,#3f89fc 97.57%)
+						.cards
+							display: flex
+							margin-top: gem(31)
+							margin-bottom: gem(40)
+							a
+								display: flex
+								margin-right: gem(35)
+								img
+									width: gem(70)
+									height: gem(50)
+							a:last-child
+								margin-right: 0
 						.subtotal
 							display: flex
 							flex-direction: column
-							margin-bottom: gem(141)
+							margin-top: gem(71)
+							margin-bottom: 0
 							&-top
 								display: flex
 								justify-content: space-between
