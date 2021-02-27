@@ -14,6 +14,9 @@ $(function() {
         }
 
 
+/* Play an animation on each click */
+
+
         // let questionMarks = document.querySelectorAll('.animationWrapper img')
         // let questionsWrapper = document.querySelector('.animationWrapper')
         // let wrapperWidth = questionsWrapper.getBoundingClientRect().width
