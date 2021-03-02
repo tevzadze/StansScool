@@ -31,6 +31,9 @@ body
 		overflow: hidden
 	&.modal-active
 		overflow: hidden
+		.background-body
+			opacity: 1
+			pointer-events: unset
 
 main
 	position: relative
@@ -162,6 +165,35 @@ body
 	top: 0
 	width: 100%
 	z-index: 9
+	.right-part
+		display: flex
+		justify-content: center
+		align-items: center
+		margin-top: gem(50)
+		span
+			display: flex
+			justify-content: center
+			align-items: center
+			width: gem(25)
+			height: gem(25)
+			font-size: gem(15)
+			line-height: gem(20)
+			font-family: var(--accent-font)
+			font-weight: 600
+			color: #fff
+			position: absolute
+			top: gem(-10)
+			right: gem(-15)
+			border-radius: 100%
+			background: linear-gradient(46.23deg, #FEBD2F 0%, #F95721 27.38%, #FC1370 55.36%, #BA2DB2 73.95%, #8342E9 85.42%, #3F89FC 106.06%)
+		img
+			position: relative
+			z-index: 2
+		.basket
+			position: relative
+			cursor: pointer
+			
+
 	&-contains
 		display: flex
 		flex-direction: row
@@ -174,8 +206,7 @@ body
 				width: gem(150)
 		.link
 			display: flex
-			margin-right: gem(-14)
-			margin-top: gem(50)
+			margin-right: gem(50)
 			font-weight: 600
 			justify-content: center
 			align-items: center
@@ -584,11 +615,11 @@ body
 			flex-direction: column
 			align-items: flex-end
 			position: relative
-			top: gem(-140)
+			top: gem(-120)
 			h3, p
 				max-width: gem(630)
 			h3
-				margin-bottom: gem(20)
+				margin-bottom: gem(10)
 				z-index: 2
 			p:last-child
 				margin-top: gem(30)
@@ -596,6 +627,8 @@ body
 				transform: translateY(gem(-15))
 				opacity: 0
 				transition: all 1s ease
+				p
+					margin-bottom: gem(15)
 				&.visible
 					opacity: 1
 					transform: translateY(gem(20))
@@ -1156,6 +1189,106 @@ footer
 				margin-right: 0
 		&-copyright
 			display: flex 
+.background-body
+	position: fixed
+	height: 100vh
+	width: 100%
+	z-index: 9
+	top: 0
+	background: rgba(0,0,0,0.5)
+	opacity: 0
+	pointer-events: none
+	transition: all 0.3s ease
+.cart
+	position: fixed
+	top: 0
+	left: -100%
+	background: #111111
+	height: 100vh
+	width: gem(516)
+	z-index: 10
+	display: flex
+	flex-direction: column
+	align-items: center
+	padding: gem(8)
+	transition: all 0.5s ease
+	&.active
+		left: 0
+	.close-cart
+		position: absolute
+		width: gem(20)
+		top: gem(20)
+		right: gem(13)
+		cursor: pointer
+	.button-wrapper
+		width: gem(427)
+		margin-top: gem(21)
+	h2
+		font-family: var(--sub-font)
+		text-transform: uppercase
+		font-size: gem(35)
+		line-height: gem(35)
+		color: #fff
+		margin-top: gem(60)
+		margin-left: gem(40)
+		margin-bottom: gem(40)
+	&-body
+		display: flex
+		flex-direction: column
+		align-items: center
+	&-item
+		background: #2a2929
+		padding: gem(27) gem(17)
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+		margin-bottom: gem(20)
+		&-info
+			display: flex
+			flex-direction: row
+			flex-wrap: wrap
+			align-items: center
+			justify-content: space-between
+			margin-left: gem(20)
+			p
+				font-family: var(--sub-font)
+				font-size: gem(20)
+				line-height: gem(20)
+				color: #fff
+			img
+				cursor: pointer
+		&-title
+			width: 100%
+			margin-bottom: gem(40)
+	&-bottom
+		position: absolute
+		display: flex
+		flex-direction: column
+		align-items: center
+		bottom: gem(60)
+	&-total
+		display: flex
+		justify-content: space-between
+		background: #2a2929
+		width: gem(468)
+		padding: gem(31) gem(14) gem(14) gem(14)
+		h3, p
+			font-family: var(--sub-font)
+			font-size: gem(20)
+			line-height: gem(20)
+			color: #fff
+		.tax-info
+			font-family: var(--main-font)
+			color: #fff
+			font-size: gem(13)
+			line-height: gem(15)
+			margin-top: gem(8)
+		&-left
+			display: flex
+			flex-direction: column
+			width: gem(262)
+			
+
 @keyframes spaceman 
 	0%
 		transform: translateY(gem(20)) rotate(-5deg)
