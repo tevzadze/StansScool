@@ -38771,7 +38771,20 @@ var getPageYScroll = function getPageYScroll() {
   return docScroll = window.pageYOffset || document.documentElement.scrollTop;
 };
 
-window.addEventListener("scroll", getPageYScroll); // Item
+window.addEventListener("scroll", getPageYScroll);
+var enrollLink = document.querySelector('.enrollButton');
+var priceBlock = document.querySelector('#price');
+var scrollDiv = document.querySelector("div[data-scroll]");
+
+if (enrollLink) {
+    enrollLink.addEventListener('click', function () {
+  var y = priceBlock.getBoundingClientRect().y;
+  console.log(priceBlock.getBoundingClientRect());
+  event.preventDefault();
+  window.scrollTo(0, y); // docScroll = enrollLink.pageYOffset || document.documentElement.scrollTop;
+});
+}
+ // Item// Item
 
 var Item = /*#__PURE__*/function () {
   function Item(el, scroll) {

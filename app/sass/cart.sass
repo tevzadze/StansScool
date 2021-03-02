@@ -4,35 +4,13 @@
 	justify-content: center
 	background: var(--color-black)
 	position: relative
-	&-cross
-		display: flex
-		position: absolute
-		top: gem(20)
+	margin: auto
+	.mfp-close
+		color: #fff
+		font-size: gem(40)
+		top: gem(10)
 		right: gem(10)
-		width: gem(20)
-		height: gem(20)
-		cursor: pointer
-		&:before
-			display: block
-			content: ''
-			width: gem(28)
-			height: gem(4)
-			position: absolute
-			top: gem(8)
-			left: gem(-4)
-			transform: rotate(-45deg)
-			background: var(--color-white)
-		&:after
-			display: block
-			content: ''
-			width: gem(28)
-			height: gem(4)
-			position: absolute
-			top: gem(8)
-			left: gem(-4)
-			transform: rotate(45deg)
-			background: var(--color-white)
-
+		opacity: 1
 	&-all
 		display: flex
 		flex-direction: column
