@@ -53,20 +53,19 @@
 							font-weight: 700
 					&-other
 						display: flex
-						justify-content: space-between
-						width: 100%
-						&-remove
+						justify-content: flex-start
+						p.desc-1
 							display: flex
-							width: gem(18)
-							img
-								width: gem(18)
-								max-width: unset
-						&-price
-							display: flex
-							span
-								font-size: gem(25)
-								line-height: gem(14.4)
-								font-weight: 700
+							font-size: gem(20)
+							font-weight: 400
+							line-height: gem(20)
+					&-price
+						display: flex
+						justify-content: flex-end
+						span
+							font-size: gem(25)
+							line-height: gem(14.4)
+							font-weight: 700
 		&-subtotal
 			display: flex
 			flex-direction: column
@@ -164,6 +163,17 @@
 					line-height: gem(28.6)
 					font-weight: 500
 					z-index: 5
+			&-banks
+				display: flex
+				width: gem(200)
+				justify-content: space-between
+				margin-top: gem(37)
+				a
+					display: flex
+					width: gem(42)
+					img
+						width: gem(42)
+						height: auto
 @media all and (max-width: 1024px)
 	.cart
 		width: gem(585)
@@ -190,10 +200,11 @@
 								font-size: gem(20)
 								line-height: gem(20)
 						&-other
-							&-price
-								display: flex
-								span
-									font-size: gem(20)
+							p.desc-1
+								font-size: gem(16)
+						&-price
+							span
+								font-size: gem(20)
 			&-subtotal
 				width: gem(545)
 				margin-bottom: gem(62)
@@ -242,7 +253,7 @@
 					width: gem(355)
 					&-left
 						margin-right: gem(9.5)
-						margin-top: gem(25)
+						margin-top: gem(37)
 						margin-bottom: 0
 						margin-left: gem(6)
 						width: gem(124)
@@ -258,12 +269,15 @@
 								font-size: gem(15)
 								line-height: gem(24)
 						&-other
-							flex-direction: row-reverse
-							margin-top: gem(13)
-							&-price
-								display: flex
-								span
-									font-size: gem(20)
+							margin-top: gem(7)
+							margin-bottom: gem(16)
+							p.desc-1
+								font-size: gem(14)
+						&-price
+							display: flex
+							justify-content: flex-start
+							span
+								font-size: gem(20)
 			&-subtotal
 				width: gem(347)
 				margin-bottom: gem(69)
