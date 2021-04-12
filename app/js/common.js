@@ -136,8 +136,10 @@ $(function() {
         let enrollLink = document.querySelector('.enrollButton')
         let priceBlock = document.querySelector('#price')
         let scrollDiv = document.querySelector("div[data-scroll]");
-
-        enrollLink.addEventListener("click", clickHandler);
+        if(enrollLink) {
+            enrollLink.addEventListener("click", clickHandler);
+        }
+        
 
         function clickHandler(e) {
             e.preventDefault();
