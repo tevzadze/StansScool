@@ -170,28 +170,42 @@ body
 		justify-content: center
 		align-items: center
 		margin-top: gem(50)
-		span
-			display: flex
-			justify-content: center
-			align-items: center
-			width: gem(25)
-			height: gem(25)
-			font-size: gem(15)
-			line-height: gem(20)
-			font-family: var(--accent-font)
-			font-weight: 600
-			color: #fff
-			position: absolute
-			top: gem(-10)
-			right: gem(-15)
-			border-radius: 100%
-			background: linear-gradient(46.23deg, #FEBD2F 0%, #F95721 27.38%, #FC1370 55.36%, #BA2DB2 73.95%, #8342E9 85.42%, #3F89FC 106.06%)
+		// span
+		// 	display: flex
+		// 	justify-content: center
+		// 	align-items: center
+		// 	width: gem(25)
+		// 	height: gem(25)
+		// 	font-size: gem(15)
+		// 	line-height: gem(20)
+		// 	font-family: var(--accent-font)
+		// 	font-weight: 600
+		// 	color: #fff
+		// 	position: absolute
+		// 	top: gem(-10)
+		// 	right: gem(-15)
+		// 	border-radius: 100%
+		// 	background: linear-gradient(46.23deg, #FEBD2F 0%, #F95721 27.38%, #FC1370 55.36%, #BA2DB2 73.95%, #8342E9 85.42%, #3F89FC 106.06%)
 		img
 			position: relative
 			z-index: 2
 		.basket
 			position: relative
 			cursor: pointer
+		&-element
+			display: flex
+			justify-content: center
+			align-items: center
+			img
+				width: gem(30)
+				height: gem(30)
+				margin-right: gem(20)
+			span.label-3
+				color: var(--color-white)
+				font-size: gem(20)
+				line-height: gem(12)
+		&-element:first-child
+			margin-right: gem(50)
 			
 
 	&-contains
@@ -1200,7 +1214,16 @@ body
 			a:last-child
 				margin-right: 0
 		&-copyright
-			display: flex 
+			display: flex
+.logon_footer
+	display: flex
+	align-items: center
+	width: 100%
+	height: gem(90)
+	span.label-3
+		font-size: gem(20)
+		line-height: gem(24)
+		color: #979797
 .background-body
 	position: fixed
 	height: 100vh
@@ -1233,3 +1256,8 @@ body
 @import 'terms.sass'
 @import 'privacy.sass'
 @import 'cookies.sass'
+@import 'payment.sass'
+@import 'info.sass'
+@import 'registration.sass'
+@import 'logon.sass'
+@import 'lesson-menu.sass'

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- <base href="/"> -->
+    <title>Music dot scool</title>
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Template Basic Images Start -->
+    <meta property="og:image" content="path/to/image.jpg">
+    <link rel="icon" href="img/favicon/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/favicon.png">
+    <!-- Template Basic Images End -->
+    <!-- Custom Browsers Color Start -->
+    <meta name="theme-color" content="#fff">
+    <!-- Custom Browsers Color End -->
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="css/notes.css">
+    <script type="text/javascript">
+    if (screen.width > 1024) {
+        let head = document.getElementsByTagName('head')[0];
+        let script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'js/base.js';
+        head.appendChild(script);
+        console.log('inspect')
+    }
+    if (screen.width > 1024) {
+        let head = document.getElementsByTagName('head')[0];
+        let script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'js/app.js';
+        head.appendChild(script);
+        console.log('inspect')
+    }
+    </script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+
+<body>
+    <div class="preloader">
+        <lottie-player src="img/preloader.json" background="#111111" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+    </div>
+    <!-- Start here -->
+    <main class="logon_main">
+        <!-- begin scrollable -->
+        <!-- <div data-scroll="" class="scroll-div"> -->
+        <!-- begin section -->
+        <header class="header">
+            <div class="container">
+                <div class="header-contains">
+                    <a href="index.html" class="logo">
+                        <img src="img/logo.svg" alt="logo">
+                    </a>
+                    <div class="right-part">
+                        <a href="#" class="right-part-element">
+                            <span class="label-3">My courses</span>
+                        </a>
+                        <a href="#" class="right-part-element">
+                            <img src="img/logon.svg" alt="logon">
+                            <span class="label-3">Stan</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section>
+            <div class="logon_card">
+                <div class="logon_card-pics">
+                    <img src="img/logon-card.svg" alt="logon-card">
+                </div>
+                <div class="logon_card-text">
+                    <p class="title-h7">Music Production Essentials</p>
+                    <div class="logon_card-text-progress"></div>
+                    <span class="desc-1 logon_card-text-percent">0%</span>
+                    <div class="logon_card-text-bottom">
+                        <span class="desc-1">Stan Kutcher</span>
+                        <span class="desc-1">complete</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- </div> -->
+        <div class="cart trial_popup zoom-anim-dialog mfp-hide" id="popup-trial">
+            <div class="cart-all">
+                <div class="cart-all-trial">
+                    <h2 class="title-h4">Please enter your name and email:</h2>
+                    <div class="contact-form">
+                        <form action="">
+                            <div class="trial-form-top">
+                                <div class="input"><input type="text" placeholder="First name"></div>
+                                <div class="input"><input type="text" placeholder="Last  name"></div>
+                            </div>
+                            <div class="trial-form-bottom">
+                                <div class="input"><input type="text" placeholder="Email address">
+                                </div>
+                            </div>
+                            <button>
+                                <p class="subtitle-1">Submit</p>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="logon_footer">
+                    <span class="label-3">© 2021 Music School</span>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <div id="anim-container"></div>
+    <!-- End here -->
+    <script src="js/scripts.min.js"></script>
+    <!-- include additional scripts here AFTER app scripts will run -->
+</body>
+
+</html>

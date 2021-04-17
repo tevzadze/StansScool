@@ -1,0 +1,198 @@
+.registration_main, .contact_main
+	background: var(--color-black)
+	.registration
+		display: flex
+		flex-direction: column
+		width: 100%
+		&-section
+			display: flex
+			width: 100%
+			height: 100vh
+			padding-top: gem(174)
+		h1
+			display: flex
+			margin-left: gem(54)
+			font-size: gem(60)
+			font-weight: 500
+			line-height: gem(78)
+			text-align: center
+			margin-bottom: gem(40)
+
+		form
+			display: flex
+			flex-direction: column
+			align-items: center
+			margin: 0 auto
+			.input
+				display: flex
+				justify-content: center
+				align-items: center
+				background: linear-gradient(90.34deg,#febd2f .33%,#f95721 25.43%,#fc1370 51.09%,#ba2db2 68.14%,#8342e9 78.65%,#3f89fc 97.57%)
+				width: gem(600)
+				height: gem(80)
+				border-radius: gem(2)
+				z-index: 5
+				input
+					width: gem(598)
+					height: gem(78)
+					background: var(--color-black)
+					border: none
+					color: var(--color-white)
+					padding: 0
+					padding-left: gem(17)
+					border-radius: gem(2)
+					font-size: gem(20)
+					font-weight: 400
+					line-height: gem(24)
+				input:focus
+					outline: 0
+    				border: none
+			.input:nth-child(2)
+				margin: gem(20) 0
+			button
+				width: gem(374)
+				height: gem(65)
+				margin-top: gem(40)
+				display: flex
+				justify-content: center
+				align-items: center
+				outline: 0
+				border: none
+				border-radius: gem(2)
+				position: relative
+				cursor: pointer
+				background: linear-gradient(90.34deg,#febd2f .33%,#f95721 25.43%,#fc1370 51.09%,#ba2db2 68.14%,#8342e9 78.65%,#3f89fc 97.57%)
+				&:before
+					display: block
+					content: ''
+					width: calc(100% - 2px)
+					height: calc(100% - 2px)
+					position: absolute
+					top: .01rem
+					background: var(--color-black)
+					opacity: .85
+					border-radius: gem(2)
+					z-index: 1
+				p.subtitle-1
+				    font-size: gem(25)
+				    line-height: gem(32.6)
+				    font-weight: 500
+				    z-index: 5
+.contact_main
+	.registration
+		form
+			.input-short
+				display: flex
+				width: 100%
+				justify-content: space-between
+				.input, .input:nth-child(2)
+					width: gem(465)
+					height: gem(70)
+					margin: 0
+					input
+						width: gem(463)
+						height: gem(68)
+			button
+				width: gem(374)
+				height: gem(60)
+				cursor: pointer
+			.input:nth-child(2)
+				width: gem(950)
+				height: gem(70)
+				input
+					width: gem(948)
+					height: gem(68)
+			.input-big
+				width: gem(950)
+				height: gem(212)
+				display: flex
+				justify-content: center
+				align-items: center
+				background: linear-gradient(90.34deg, #febd2f .33%,#f95721 25.43%,#fc1370 51.09%,#ba2db2 68.14%,#8342e9 78.65%,#3f89fc 97.57%)
+				border-radius: gem(2)
+				textarea
+					display: flex
+					width: gem(948)
+					height: gem(210)
+					outline: none
+					border: none
+					border-radius: gem(2)
+					position: relative
+					background: var(--color-black)
+					font-family: var(--main-font)
+					resize: none
+					font-size: gem(20)
+					font-weight: 400
+					line-height: gem(24)
+					color: var(--color-white)
+					padding: gem(20) gem(24)
+@media all and (max-width: 1024px)
+	.registration_main, .contact_main
+		.registration
+			h1
+				font-size: gem(60)
+				line-height: gem(60)
+				margin-left: gem(26)
+	.contact_main
+		.registration
+			form
+				.input:nth-child(2)
+					width: gem(670)
+					height: gem(65)
+					input
+						width: gem(668)
+						height: gem(63)
+				.input-short
+					.input, .input:nth-child(2)
+						width: gem(325)
+						height: gem(65)
+						input
+							width: gem(323)
+							height: gem(63)
+				.input-big
+					width: gem(668)
+					height: gem(193)
+					textarea
+						width: gem(666)
+						height: gem(191)
+				button
+					width: gem(300)
+					height: gem(70)
+@media all and (max-width: 480px)
+	.registration_main, .contact_main
+		.registration
+			h1
+				font-size: gem(33)
+				line-height: gem(30)
+				margin: 0 auto
+				margin-bottom: gem(30)
+	.contact_main
+		.registration
+			form
+				.input:nth-child(2)
+					width: gem(330)
+					height: gem(60)
+					margin: gem(11) 0
+					input
+						width: gem(328)
+						height: gem(58)
+				.input-short
+					flex-direction: column
+					.input, .input:nth-child(2)
+						width: gem(330)
+						height: gem(60)
+						input
+							width: gem(328)
+							height: gem(58)
+					.input:nth-child(2)
+						margin-top: gem(11)
+				.input-big
+					width: gem(330)
+					height: gem(250)
+					textarea
+						width: gem(328)
+						height: gem(248)
+				button
+					width: gem(300)
+					height: gem(60)
+					margin-top: gem(30)
